@@ -1,25 +1,41 @@
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { useCountUp } from "@/hooks/useCountUp";
+
+const StatItem = ({ end, suffix, label, isVisible }: { end: number; suffix: string; label: string; isVisible: boolean }) => {
+  const count = useCountUp(end, 2000, isVisible);
+  return (
+    <div className="text-center">
+      <div className="text-[#1B3A4B] text-5xl md:text-7xl font-cormorant font-light tracking-tight mb-3">
+        {count}{suffix}
+      </div>
+      <div className="text-[#2C2C2C]/40 text-xs uppercase tracking-[0.15em] font-outfit font-medium">
+        {label}
+      </div>
+    </div>
+  );
+};
+
 export const Stats = () => {
-  const stats = [
-    { number: "500+", label: "Estimations" },
-    { number: "10+", label: "Années" },
-    { number: "15", label: "Communes" },
-    { number: "48h", label: "Délai" }
-  ];
+  const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section className="relative bg-white bg-cover box-border caret-transparent w-full bg-center">
-      <div className="relative items-start bg-cover box-border caret-transparent flex flex-col max-w-[1080px] text-center mx-auto px-2.5 py-20 md:px-0 md:py-32">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-12 w-full max-w-5xl mx-auto">
-          {stats.map((stat, index) => (
-            <div key={index} className="text-center">
-              <div className="text-navy text-5xl md:text-6xl font-cormorant font-light mb-3 tracking-tight">
-                {stat.number}
-              </div>
-              <div className="text-neutral-400 text-xs uppercase tracking-[0.15em] font-medium">
-                {stat.label}
-              </div>
-            </div>
-          ))}
+    <section className="relative bg-white w-full">
+      <div ref={ref} className="container-main py-24 md:py-32">
+        <div className={`text-center mb-16 fade-in-up ${isVisible ? "visible" : ""}`}>
+          <div className="section-label mb-4">/les chiffres</div>
+          <h2 className="section-heading text-[36px] md:text-[48px] max-w-2xl mx-auto mb-4">
+            /estimanou en quelques chiffres depuis sa création
+          </h2>
+          <p className="text-[#2C2C2C]/50 font-light max-w-lg mx-auto">
+            Depuis 2015, Valentin accompagne les propriétaires réunionnais avec rigueur et passion.
+          </p>
+        </div>
+
+        <div className={`grid grid-cols-2 md:grid-cols-4 gap-12 max-w-4xl mx-auto fade-in-up ${isVisible ? "visible" : ""}`}>
+          <StatItem end={500} suffix="+" label="Estimations réalisées" isVisible={isVisible} />
+          <StatItem end={10} suffix="+" label="Années d'expérience" isVisible={isVisible} />
+          <StatItem end={15} suffix="" label="Communes couvertes" isVisible={isVisible} />
+          <StatItem end={48} suffix="h" label="Délai moyen de réponse" isVisible={isVisible} />
         </div>
       </div>
     </section>
