@@ -10,6 +10,7 @@ export default defineConfig({
   base: "./",
   server: {
     port: 3053,
+    host: true,
   },
   css: {
     postcss: {
