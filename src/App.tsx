@@ -1,37 +1,32 @@
-import { AnnouncementBanner } from "@/components/AnnouncementBanner";
-import { Header } from "@/sections/Header";
-import { Hero } from "@/sections/Hero";
-import { BookNowBanner } from "@/sections/BookNowBanner";
-import { Secteurs } from "@/sections/Secteurs";
-import { About } from "@/sections/About";
-import { Benefits } from "@/sections/Benefits";
-import { Process } from "@/sections/Process";
-import { Services } from "@/sections/Services";
-import { CTABanner } from "@/sections/CTABanner";
-import { Stats } from "@/sections/Stats";
-import { Examples } from "@/sections/Examples";
-import { Testimonials } from "@/sections/Testimonials";
-import { Blog } from "@/sections/Blog";
-import { Footer } from "@/sections/Footer";
+import { Routes, Route, useLocation } from "react-router-dom";
+import { useEffect } from "react";
+import { HomePage } from "@/pages/HomePage";
+import { EstimerPage } from "@/pages/EstimerPage";
+import { AProposPage } from "@/pages/AProposPage";
+import { ContactPage } from "@/pages/ContactPage";
+import { BlogPage } from "@/pages/BlogPage";
+import { ResultatPage } from "@/pages/ResultatPage";
+
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+};
 
 export const App = () => {
   return (
-    <body className="text-neutral-600 text-base not-italic normal-nums font-normal accent-auto bg-white box-border caret-transparent block tracking-[normal] leading-relaxed list-outside list-disc pointer-events-auto text-start indent-[0px] normal-case visible border-separate font-outfit">
-      <AnnouncementBanner />
-      <Header />
-      <Hero />
-      <BookNowBanner />
-      <Secteurs />
-      <About />
-      <Benefits />
-      <Process />
-      <Services />
-      <CTABanner />
-      <Stats />
-      <Examples />
-      <Testimonials />
-      <Blog />
-      <Footer />
-    </body>
+    <div className="font-outfit text-[#2C2C2C]">
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/estimer" element={<EstimerPage />} />
+        <Route path="/a-propos" element={<AProposPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/actualites" element={<BlogPage />} />
+        <Route path="/resultat" element={<ResultatPage />} />
+      </Routes>
+    </div>
   );
 };
