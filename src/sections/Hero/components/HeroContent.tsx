@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 
 export const HeroContent = () => {
@@ -19,13 +20,13 @@ export const HeroContent = () => {
         </p>
 
         <div className="animate-fade-in-up animate-delay-200 w-full px-4 md:w-auto md:px-0">
-          <a
-            href="/estimer"
+          <Link
+            to="/estimer"
             className="group text-navy text-[14px] md:text-[13px] items-center bg-white inline-flex justify-center text-center w-full md:w-auto px-10 py-5 md:px-12 md:py-5 rounded-full hover:bg-white/90 transition-all duration-500 hover:shadow-xl uppercase tracking-[0.15em] md:tracking-[0.2em] font-medium md:font-normal"
           >
             Faire estimer mon bien
             <ArrowRight className="ml-3 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" strokeWidth={1.5} />
-          </a>
+          </Link>
         </div>
 
         <div className="animate-fade-in-up animate-delay-300 flex items-center gap-6 md:gap-8 mt-16 text-white/45 text-[13px] font-light tracking-wide">
