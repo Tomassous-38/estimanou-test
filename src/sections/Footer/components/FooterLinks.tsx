@@ -7,28 +7,31 @@ export const FooterLinks = () => {
       <FooterColumn
         title="Secteurs"
         links={[
-          { text: "Saint-Gilles", href: "#" },
-          { text: "Saint-Leu", href: "#" },
-          { text: "Étang-Salé", href: "#" },
-          { text: "Saint-Paul", href: "#" }
+          { text: "Saint-Gilles-les-Bains", href: "/estimation-immobiliere/saint-gilles" },
+          { text: "Saint-Leu", href: "/estimation-immobiliere/saint-leu" },
+          { text: "Saint-Paul", href: "/estimation-immobiliere/saint-paul" },
+          { text: "Saint-Denis", href: "/estimation-immobiliere/saint-denis" },
+          { text: "Saint-Pierre", href: "/estimation-immobiliere/saint-pierre" },
+          { text: "Le Tampon", href: "/estimation-immobiliere/le-tampon" }
         ]}
         variant="md:w-auto"
       />
       <FooterColumn
-        title="Estimation"
+        title="Services"
         links={[
-          { text: "En ligne", href: "#" },
-          { text: "Comment ça marche", href: "#" },
-          { text: "Exemples", href: "#" }
+          { text: "Estimer mon bien", href: "/estimer" },
+          { text: "Biens à vendre", href: "/biens-a-vendre" },
+          { text: "Mise en valeur", href: "/mise-en-valeur" },
+          { text: "Blog", href: "/blog" }
         ]}
         variant="md:w-auto"
       />
       <FooterColumn
         title="À propos"
         links={[
-          { text: "Qui suis-je", href: "#" },
-          { text: "Actualités", href: "#" },
-          { text: "Contact", href: "#" }
+          { text: "Qui suis-je", href: "/#apropos" },
+          { text: "Actualités", href: "/blog" },
+          { text: "Contact", href: "/#contact" }
         ]}
         variant="md:w-auto"
       />

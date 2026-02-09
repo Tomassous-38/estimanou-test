@@ -1,46 +1,56 @@
+import { Link, useLocation } from "react-router-dom";
+
 export const DesktopNav = () => {
+  const { pathname } = useLocation();
+  const isHome = pathname === "/";
+
+  const linkClass =
+    "text-neutral-600 text-[13.5px] tracking-wide hover:text-navy transition-colors duration-300 font-normal";
+  const activeLinkClass =
+    "text-navy text-[13.5px] tracking-wide transition-colors duration-300 font-normal";
+
+  // Anchor links — only relevant on homepage
+  const anchorLinks = [
+    { label: "Secteurs", href: "#secteurs" },
+    { label: "À propos", href: "#apropos" },
+    { label: "Contact", href: "#contact" },
+  ];
+
+  // Page links — always available
+  const pageLinks = [
+    { label: "Biens à vendre", href: "/biens-a-vendre" },
+    { label: "Blog", href: "/blog" },
+    { label: "Mise en valeur", href: "/mise-en-valeur" },
+  ];
+
   return (
-    <ul className="absolute items-stretch bg-white box-border caret-transparent gap-x-0 flex flex-col h-0 justify-start left-[-335px] list-none max-h-[881.406px] min-h-0 min-w-0 pointer-events-none gap-y-0 invisible w-screen z-[1000] overflow-hidden pl-0 top-[calc(100%_+_15px)] md:static md:items-center md:bg-transparent md:flex-row md:h-auto md:max-h-none md:min-h-[auto] md:min-w-[auto] md:pointer-events-auto md:visible md:w-auto md:z-auto md:overflow-visible md:left-auto md:top-auto md:gap-x-8">
-      <li className="relative box-border caret-transparent pointer-events-none invisible md:pointer-events-auto md:visible">
-        <a
-          href="#estimer"
-          className="text-neutral-500 text-sm box-border caret-transparent hover:text-navy transition-colors font-light"
-        >
-          Estimer
-        </a>
-      </li>
-      <li className="relative box-border caret-transparent pointer-events-none invisible md:pointer-events-auto md:visible">
-        <a
-          href="#secteurs"
-          className="text-neutral-600 text-sm box-border caret-transparent hover:text-navy transition-colors"
-        >
-          Secteurs
-        </a>
-      </li>
-      <li className="relative box-border caret-transparent pointer-events-none invisible md:pointer-events-auto md:visible">
-        <a
-          href="#apropos"
-          className="text-neutral-600 text-sm box-border caret-transparent hover:text-navy transition-colors"
-        >
-          À propos
-        </a>
-      </li>
-      <li className="relative box-border caret-transparent pointer-events-none invisible md:pointer-events-auto md:visible">
-        <a
-          href="#actualites"
-          className="text-neutral-600 text-sm box-border caret-transparent hover:text-navy transition-colors"
-        >
-          Actualités
-        </a>
-      </li>
-      <li className="relative box-border caret-transparent pointer-events-none invisible md:pointer-events-auto md:visible">
-        <a
-          href="#contact"
-          className="text-neutral-600 text-sm box-border caret-transparent hover:text-navy transition-colors"
-        >
-          Contact
-        </a>
-      </li>
+    <ul className="hidden lg:flex items-center gap-6">
+      {anchorLinks.map((link) => (
+        <li key={link.href}>
+          {isHome ? (
+            <a href={link.href} className={linkClass}>
+              {link.label}
+            </a>
+          ) : (
+            <Link to={`/${link.href}`} className={linkClass}>
+              {link.label}
+            </Link>
+          )}
+        </li>
+      ))}
+      {pageLinks.map((link) => {
+        const isActive = pathname.startsWith(link.href);
+        return (
+          <li key={link.href}>
+            <Link
+              to={link.href}
+              className={isActive ? activeLinkClass : linkClass}
+            >
+              {link.label}
+            </Link>
+          </li>
+        );
+      })}
     </ul>
   );
 };

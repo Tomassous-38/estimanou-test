@@ -1,37 +1,29 @@
-import { AnnouncementBanner } from "@/components/AnnouncementBanner";
-import { Header } from "@/sections/Header";
-import { Hero } from "@/sections/Hero";
-import { BookNowBanner } from "@/sections/BookNowBanner";
-import { Secteurs } from "@/sections/Secteurs";
-import { About } from "@/sections/About";
-import { Benefits } from "@/sections/Benefits";
-import { Process } from "@/sections/Process";
-import { Services } from "@/sections/Services";
-import { CTABanner } from "@/sections/CTABanner";
-import { Stats } from "@/sections/Stats";
-import { Examples } from "@/sections/Examples";
-import { Testimonials } from "@/sections/Testimonials";
-import { Blog } from "@/sections/Blog";
-import { Footer } from "@/sections/Footer";
+import { Routes, Route } from "react-router-dom";
+import { HomePage } from "@/pages/HomePage";
+import { BlogArticlePage } from "@/pages/BlogArticlePage";
+import { CityLandingPage } from "@/pages/CityLandingPage";
+import { PropertyListPage } from "@/pages/PropertyListPage";
+import { PropertyDetailPage } from "@/pages/PropertyDetailPage";
+import { MiseEnValeurPage } from "@/pages/MiseEnValeurPage";
+import { BlogListPage } from "@/pages/BlogListPage";
+import { EstimationPage } from "@/pages/EstimationPage";
+import { ScrollToTop } from "@/components/ScrollToTop";
 
 export const App = () => {
   return (
-    <body className="text-neutral-600 text-base not-italic normal-nums font-normal accent-auto bg-white box-border caret-transparent block tracking-[normal] leading-relaxed list-outside list-disc pointer-events-auto text-start indent-[0px] normal-case visible border-separate font-outfit">
-      <AnnouncementBanner />
-      <Header />
-      <Hero />
-      <BookNowBanner />
-      <Secteurs />
-      <About />
-      <Benefits />
-      <Process />
-      <Services />
-      <CTABanner />
-      <Stats />
-      <Examples />
-      <Testimonials />
-      <Blog />
-      <Footer />
-    </body>
+    <div className="text-neutral-700 text-base font-normal bg-white leading-relaxed font-outfit">
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/blog" element={<BlogListPage />} />
+        <Route path="/blog/:slug" element={<BlogArticlePage />} />
+        <Route path="/estimation-immobiliere/:citySlug" element={<CityLandingPage />} />
+        <Route path="/biens-a-vendre" element={<PropertyListPage />} />
+        <Route path="/biens-a-vendre/:citySlug" element={<PropertyListPage />} />
+        <Route path="/biens-a-vendre/:citySlug/:propertySlug" element={<PropertyDetailPage />} />
+        <Route path="/mise-en-valeur" element={<MiseEnValeurPage />} />
+        <Route path="/estimer" element={<EstimationPage />} />
+      </Routes>
+    </div>
   );
 };

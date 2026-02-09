@@ -1,12 +1,14 @@
+import { Link } from "react-router-dom";
+
 export const CTAButton = () => {
   return (
-    <div className="box-border caret-transparent hidden max-w-full min-h-0 min-w-0 md:block md:min-h-[auto] md:min-w-[auto]">
-      <a
-        href="#estimer"
-        className="text-white text-sm items-center bg-navy box-border caret-transparent inline-flex justify-center leading-4 max-w-full text-center align-middle border overflow-hidden px-6 py-3 rounded-full border-solid border-transparent hover:bg-navy/90 transition-all hover:scale-105 font-normal"
+    <div className="hidden lg:block">
+      <Link
+        to="/estimer"
+        className="text-white text-[13px] items-center bg-navy inline-flex justify-center text-center px-6 py-2.5 rounded-full hover:bg-navy/90 transition-all duration-300 tracking-wide font-normal"
       >
-        Estimer
-      </a>
+        Faire estimer mon bien
+      </Link>
     </div>
   );
 };

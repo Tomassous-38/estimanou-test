@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export type FooterColumnProps = {
   title: string;
   links: Array<{
@@ -10,21 +12,40 @@ export type FooterColumnProps = {
 export const FooterColumn = (props: FooterColumnProps) => {
   return (
     <div
-      className={`relative items-start bg-cover box-border caret-transparent gap-x-3 flex flex-col justify-start gap-y-3 w-full ${props.variant}`}
+      className={`flex flex-col gap-y-4 w-full ${props.variant}`}
     >
-      <h3 className="text-navy text-xs box-border caret-transparent leading-6 max-w-full uppercase tracking-[0.15em] font-semibold">
+      <h3 className="text-navy text-xs uppercase tracking-[0.15em] font-semibold">
         {props.title}
       </h3>
-      <div className="relative items-start bg-cover box-border caret-transparent gap-x-2 flex flex-col max-w-full gap-y-2 w-full">
-        {props.links.map((link, index) => (
-          <a
-            key={index}
-            href={link.href}
-            className="text-neutral-500 text-sm box-border caret-transparent flex leading-relaxed hover:text-navy transition-colors font-light"
-          >
-            {link.text}
-          </a>
-        ))}
+      <div className="flex flex-col gap-y-2.5">
+        {props.links.map((link, index) => {
+          const isExternal = link.href.startsWith("http");
+          const isAnchor = link.href.startsWith("#") || link.href.startsWith("/#");
+          const linkClass = "text-neutral-600 text-[15px] leading-relaxed hover:text-gold transition-colors font-light";
+
+          if (isExternal || isAnchor) {
+            return (
+              <a
+                key={index}
+                href={link.href}
+                className={linkClass}
+                {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+              >
+                {link.text}
+              </a>
+            );
+          }
+
+          return (
+            <Link
+              key={index}
+              to={link.href}
+              className={linkClass}
+            >
+              {link.text}
+            </Link>
+          );
+        })}
       </div>
     </div>
   );

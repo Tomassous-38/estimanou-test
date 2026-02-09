@@ -5,26 +5,13 @@ import { FooterCopyright } from "@/sections/Footer/components/FooterCopyright";
 
 export const Footer = () => {
   return (
-    <footer id="contact" className="relative bg-navy-100 bg-cover box-border caret-transparent w-full bg-center">
-      <div className="relative items-start bg-cover box-border caret-transparent flex flex-col max-w-[900px] text-center mx-auto px-2.5 py-16 md:py-20 md:px-0 gap-y-16">
+    <footer id="contact" className="relative bg-navy-100 w-full">
+      <div className="relative flex flex-col max-w-[900px] text-center mx-auto px-5 py-16 md:py-20 md:px-8 gap-y-12">
         <FooterNewsletter />
-        
-        <div className="box-border caret-transparent flex max-w-full w-full">
-          <div className="box-border caret-transparent flex w-full">
-            <div className="border-t-sage box-border caret-transparent w-full border-t"></div>
-          </div>
-        </div>
-        
+        <div className="w-full h-[1px] bg-navy/8"></div>
         <FooterLinks />
-        
-        <div className="box-border caret-transparent flex max-w-full w-full">
-          <div className="box-border caret-transparent flex w-full">
-            <div className="border-t-sage box-border caret-transparent w-full border-t"></div>
-          </div>
-        </div>
-        
+        <div className="w-full h-[1px] bg-navy/8"></div>
         <ContactInfo />
-        
         <FooterCopyright />
       </div>
     </footer>
