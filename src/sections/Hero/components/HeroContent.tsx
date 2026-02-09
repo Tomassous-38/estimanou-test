@@ -18,10 +18,10 @@ export const HeroContent = () => {
           Une estimation gratuite, personnalisée et argumentée par un expert du marché réunionnais. Pas un algorithme. Résultat sous 48h.
         </p>
 
-        <div className="animate-fade-in-up animate-delay-200">
+        <div className="animate-fade-in-up animate-delay-200 w-full px-4 md:w-auto md:px-0">
           <a
             href="/estimer"
-            className="group text-navy text-[13px] items-center bg-white inline-flex justify-center text-center px-10 py-4.5 md:px-12 md:py-5 rounded-full hover:bg-white/90 transition-all duration-500 hover:shadow-xl uppercase tracking-[0.2em] font-normal"
+            className="group text-navy text-[14px] md:text-[13px] items-center bg-white inline-flex justify-center text-center w-full md:w-auto px-10 py-5 md:px-12 md:py-5 rounded-full hover:bg-white/90 transition-all duration-500 hover:shadow-xl uppercase tracking-[0.15em] md:tracking-[0.2em] font-medium md:font-normal"
           >
             Faire estimer mon bien
             <ArrowRight className="ml-3 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" strokeWidth={1.5} />
