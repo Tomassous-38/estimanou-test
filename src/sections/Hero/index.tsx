@@ -10,7 +10,7 @@ export const Hero = () => {
           muted
           loop
           playsInline
-          poster="https://images.unsplash.com/photo-1591696205602-2f950c417cb9?w=1920&h=1080&fit=crop"
+          poster="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&h=1080&fit=crop&q=80"
           className="w-full h-full object-cover"
         >
           <source
