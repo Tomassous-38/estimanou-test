@@ -31,15 +31,15 @@ export const HeroContent = () => {
 
         <div className="animate-fade-in-up animate-delay-300 flex items-center gap-6 md:gap-8 mt-16 text-white/45 text-[13px] font-light tracking-wide">
           <span className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-gold/60"></span>
+            <span className="text-gold/70">✓</span>
             Gratuit
           </span>
           <span className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-gold/60"></span>
+            <span className="text-gold/70">✓</span>
             Sans engagement
           </span>
           <span className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-gold/60"></span>
+            <span className="text-gold/70">✓</span>
             Résultat sous 48h
           </span>
         </div>
