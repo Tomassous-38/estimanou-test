@@ -247,4 +247,13 @@
     border-color: rgba(184, 151, 90, 0.5);
     box-shadow: 0 0 0 3px rgba(184, 151, 90, 0.08);
   }
+
+  /* Hide scrollbar for carousel */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 }

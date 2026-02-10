@@ -6,11 +6,12 @@ import { Footer } from "@/sections/Footer";
 import { CityLandingSEO } from "@/sections/CityLanding/CityLandingSEO";
 import { CityHero } from "@/sections/CityLanding/CityHero";
 import { CityStats } from "@/sections/CityLanding/CityStats";
-import { CityMarketInsight } from "@/sections/CityLanding/CityMarketInsight";
 import { CityNeighborhoods } from "@/sections/CityLanding/CityNeighborhoods";
 import { CityProcess } from "@/sections/CityLanding/CityProcess";
-import { CityPropertiesPreview } from "@/sections/CityLanding/CityPropertiesPreview";
+import { CityMidCTA } from "@/sections/CityLanding/CityMidCTA";
+import { CityMarketInsight } from "@/sections/CityLanding/CityMarketInsight";
 import { CityTestimonials } from "@/sections/CityLanding/CityTestimonials";
+import { CityPropertiesPreview } from "@/sections/CityLanding/CityPropertiesPreview";
 import { CityFAQ } from "@/sections/CityLanding/CityFAQ";
 import { CityCTA } from "@/sections/CityLanding/CityCTA";
 import { CityLandingSEOText } from "@/sections/CityLanding/CityLandingSEOText";
@@ -51,16 +52,28 @@ export const CityLandingPage = () => {
     <>
       <Header />
       <CityLandingSEO city={city} />
+      {/* ① Hero */}
       <CityHero city={city} />
+      {/* ② Stats clés */}
       <CityStats city={city} />
-      <CityMarketInsight city={city} />
+      {/* ③ Quartiers (remonté) */}
       <CityNeighborhoods city={city} />
+      {/* ④ Notre process */}
       <CityProcess city={city} />
-      <CityPropertiesPreview city={city} />
+      {/* ⑤ Mid-funnel CTA (NOUVEAU) */}
+      <CityMidCTA city={city} />
+      {/* ⑥ Analyse marché (descendu) */}
+      <CityMarketInsight city={city} />
+      {/* ⑦ Témoignages */}
       <CityTestimonials city={city} />
+      {/* ⑧ Biens en vente (carrousel mobile) */}
+      <CityPropertiesPreview city={city} />
+      {/* ⑨ FAQ */}
       <CityFAQ city={city} />
-      <CityLandingSEOText city={city} />
+      {/* ⑩ CTA final */}
       <CityCTA city={city} />
+      {/* ⑪ SEO Text (après CTA) */}
+      <CityLandingSEOText city={city} />
       <Footer />
     </>
   );
