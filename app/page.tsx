@@ -16,6 +16,14 @@ import { HomeSEOText } from "@/sections/HomeSEOText";
 export default function HomePage() {
   return (
     <>
+      {/* Preload hero poster — LCP candidate on homepage (eager) */}
+      <link
+        rel="preload"
+        as="image"
+        href="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1280&h=720&fit=crop&q=60&fm=webp"
+        // @ts-ignore – fetchPriority not yet typed in React 18
+        fetchPriority="high"
+      />
       <Hero />
       <Process />
       <Benefits />
