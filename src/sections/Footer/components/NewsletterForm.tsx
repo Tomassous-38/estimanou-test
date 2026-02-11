@@ -8,7 +8,7 @@ export const NewsletterForm = () => {
         <em className="font-cormorant italic font-normal text-navy/70">analyses</em>{" "}
         du marché
       </h3>
-      <p className="text-neutral-500 text-[13px] font-light max-w-sm mx-auto">
+      <p className="text-neutral-600 text-[13px] font-light max-w-sm mx-auto">
         Restez informé des tendances du marché réunionnais et de nos dernières estimations
       </p>
       <form className="flex flex-col md:flex-row gap-2.5 mt-1">
@@ -26,7 +26,7 @@ export const NewsletterForm = () => {
           <ArrowRight className="ml-2 w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5" strokeWidth={1.5} />
         </button>
       </form>
-      <p className="text-neutral-500 text-[11px] font-light">
+      <p className="text-neutral-600 text-[11px] font-light">
         Pas de spam, uniquement du contenu pertinent. Désinscription en un clic.
       </p>
     </div>

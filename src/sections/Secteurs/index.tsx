@@ -138,12 +138,14 @@ export const Secteurs = () => {
         <div className="relative">
           <button
             onClick={() => scroll("left")}
+            aria-label="Défiler vers la gauche"
             className="hidden md:flex absolute -left-5 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white shadow-lg border border-navy/8 items-center justify-center text-navy/60 hover:text-navy hover:shadow-xl transition-all duration-300"
           >
             <ChevronLeft className="w-5 h-5" strokeWidth={1.5} />
           </button>
           <button
             onClick={() => scroll("right")}
+            aria-label="Défiler vers la droite"
             className="hidden md:flex absolute -right-5 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white shadow-lg border border-navy/8 items-center justify-center text-navy/60 hover:text-navy hover:shadow-xl transition-all duration-300"
           >
             <ChevronRight className="w-5 h-5" strokeWidth={1.5} />
