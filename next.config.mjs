@@ -1,3 +1,8 @@
+import { resolve, dirname } from "path";
+import { fileURLToPath } from "url";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
@@ -8,13 +13,15 @@ const nextConfig = {
       },
     ],
   },
-  // Désactive l'ESlint au build (pas de config eslint dans le projet)
   eslint: {
     ignoreDuringBuilds: true,
   },
-  // Désactive les checks TypeScript stricts au build
   typescript: {
     ignoreBuildErrors: true,
+  },
+  webpack: (config) => {
+    config.resolve.alias["@"] = resolve(__dirname, "src");
+    return config;
   },
 };
 
