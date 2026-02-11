@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { CityLanding } from "@/types/city";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { ArrowRight } from "lucide-react";
@@ -10,11 +11,14 @@ export const CityHero = ({ city }: CityHeroProps) => {
   return (
     <section className="relative w-full min-h-[520px] md:min-h-[600px] flex items-end overflow-hidden">
       {/* Background image */}
-      <img
+      <Image
         src={city.heroImage}
         alt={`Estimation immobilière à ${city.name}`}
         className="absolute inset-0 w-full h-full object-cover"
-        fetchPriority="high"
+        priority
+        width={1200}
+        height={675}
+        sizes="100vw"
       />
       {/* Overlay gradient */}
       <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/70 to-navy/20" />

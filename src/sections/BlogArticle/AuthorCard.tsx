@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Author } from "@/types/blog";
 
 interface AuthorCardProps {
@@ -10,9 +11,11 @@ export const AuthorCard = ({ author }: AuthorCardProps) => {
       className="flex items-start gap-5 rounded-xl p-6"
       style={{ backgroundColor: 'rgba(232, 237, 230, 0.2)' }}
     >
-      <img
+      <Image
         src={author.avatar}
         alt={author.name}
+        width={64}
+        height={64}
         className="w-16 h-16 rounded-full object-cover flex-shrink-0 ring-2 ring-white shadow-sm"
       />
       <div>

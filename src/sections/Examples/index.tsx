@@ -1,5 +1,6 @@
 'use client';
 
+import Image from "next/image";
 import { useRef } from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
@@ -59,7 +60,7 @@ export const Examples = () => {
           {examples.map((example, index) => (
             <div key={index} className="animate-fade-in-up group cursor-pointer bg-white rounded-2xl overflow-hidden card-hover">
               <div className="relative overflow-hidden aspect-[4/3]">
-                <img src={example.image} alt={example.type} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+                <Image src={example.image} alt={example.type} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" width={600} height={400} sizes="(max-width: 768px) 100vw, 33vw" />
                 <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-navy text-[11px] font-medium px-2.5 py-1 rounded-md">{example.surface}</div>
               </div>
               <div className="p-5 text-left">
@@ -80,7 +81,7 @@ export const Examples = () => {
             {examples.map((example, index) => (
               <div key={index} className="group bg-white rounded-2xl overflow-hidden card-hover flex-shrink-0 snap-start" style={{ width: "80vw", maxWidth: "320px" }}>
                 <div className="relative overflow-hidden aspect-[4/3]">
-                  <img src={example.image} alt={example.type} className="w-full h-full object-cover" loading="lazy" />
+                  <Image src={example.image} alt={example.type} className="w-full h-full object-cover" loading="lazy" width={600} height={400} sizes="(max-width: 768px) 100vw, 33vw" />
                   <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-navy text-[11px] font-medium px-2.5 py-1 rounded-md">{example.surface}</div>
                 </div>
                 <div className="p-5 text-left">

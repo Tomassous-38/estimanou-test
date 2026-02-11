@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export const Testimonials = () => {
   const testimonials = [
     {
@@ -20,11 +22,14 @@ export const Testimonials = () => {
         {/* Image side */}
         <div className="animate-fade-in-up md:w-5/12 flex-shrink-0">
           <div className="relative">
-            <img
+            <Image
               src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=500&h=600&fit=crop"
               alt="Maison estimée à La Réunion"
               className="rounded-2xl object-cover w-full h-[280px] md:h-[420px]"
               loading="lazy"
+              width={600}
+              height={400}
+              sizes="(max-width: 768px) 100vw, 33vw"
             />
             <div className="absolute -bottom-4 -right-4 bg-white rounded-xl shadow-lg p-4 hidden md:flex items-center gap-3">
               <div className="w-10 h-10 rounded-full bg-gold/15 flex items-center justify-center">
@@ -59,7 +64,7 @@ export const Testimonials = () => {
               « {testimonials[0].quote} »
             </blockquote>
             <div className="flex items-center justify-center md:justify-start gap-3">
-              <img src={testimonials[0].avatar} alt={testimonials[0].name} className="w-10 h-10 rounded-full object-cover" loading="lazy" />
+              <Image src={testimonials[0].avatar} alt={testimonials[0].name} className="w-10 h-10 rounded-full object-cover" loading="lazy" width={40} height={40} />
               <div className="text-left">
                 <div className="text-navy text-sm font-cormorant font-semibold italic">{testimonials[0].name}</div>
                 <div className="text-neutral-500 text-[13px] font-light">{testimonials[0].location}</div>
@@ -73,7 +78,7 @@ export const Testimonials = () => {
               « {testimonials[1].quote} »
             </blockquote>
             <div className="flex items-center justify-center md:justify-start gap-3">
-              <img src={testimonials[1].avatar} alt={testimonials[1].name} className="w-10 h-10 rounded-full object-cover" loading="lazy" />
+              <Image src={testimonials[1].avatar} alt={testimonials[1].name} className="w-10 h-10 rounded-full object-cover" loading="lazy" width={40} height={40} />
               <div className="text-left">
                 <div className="text-navy text-sm font-cormorant font-semibold italic">{testimonials[1].name}</div>
                 <div className="text-neutral-500 text-[13px] font-light">{testimonials[1].location}</div>

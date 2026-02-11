@@ -2,6 +2,7 @@
 
 import { useState, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 
 interface CityCard {
@@ -160,9 +161,12 @@ export const Secteurs = () => {
                 style={{ width: "260px" }}
               >
                 <div className="relative overflow-hidden aspect-[3/2]">
-                  <img
+                  <Image
                     src={city.image}
                     alt={city.name}
+                    width={460}
+                    height={307}
+                    sizes="260px"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     loading="lazy"
                   />

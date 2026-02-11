@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { ArrowRight } from "lucide-react";
 
@@ -5,11 +6,14 @@ export const MiseEnValeurHero = () => {
   return (
     <section className="relative w-full min-h-[520px] md:min-h-[600px] flex items-end overflow-hidden">
       {/* Background — first gallery image */}
-      <img
+      <Image
         src="https://static.wixstatic.com/media/cda1c0_b60467e4f60c4ed5a3a7c5bbc4278b83~mv2.jpg/v1/fill/w_1920,h_1080,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/cda1c0_b60467e4f60c4ed5a3a7c5bbc4278b83~mv2.jpg"
         alt="Mise en valeur immobilière à La Réunion"
         className="absolute inset-0 w-full h-full object-cover"
-        fetchPriority="high"
+        priority
+        width={1200}
+        height={675}
+        sizes="100vw"
       />
       {/* Overlay gradient */}
       <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/70 to-navy/20" />

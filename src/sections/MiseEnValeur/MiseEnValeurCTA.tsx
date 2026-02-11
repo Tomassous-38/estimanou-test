@@ -1,13 +1,17 @@
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 
 export const MiseEnValeurCTA = () => {
   return (
     <section className="relative w-full overflow-hidden">
-      <img
+      <Image
         src="https://static.wixstatic.com/media/cda1c0_1c5c03ca963a4dc8a4ccc91a37f7bde8~mv2.jpg/v1/fill/w_1920,h_800,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/cda1c0_1c5c03ca963a4dc8a4ccc91a37f7bde8~mv2.jpg"
         alt="Villa avec piscine à La Réunion"
         className="absolute inset-0 w-full h-full object-cover"
         loading="lazy"
+        width={1200}
+        height={600}
+        sizes="100vw"
       />
       <div className="absolute inset-0 bg-navy/75" />
 

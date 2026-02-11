@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { getAllProperties } from "@/data/properties";
 
@@ -41,7 +42,7 @@ export const PropertiesCarousel = () => {
               className="animate-fade-in-up group bg-white rounded-2xl overflow-hidden card-hover"
             >
               <div className="relative overflow-hidden aspect-[4/3]">
-                <img src={property.images[0]?.src} alt={property.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+                <Image src={property.images[0]?.src || ""} alt={property.title} width={600} height={450} sizes="33vw" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
                 <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-navy text-[11px] font-medium px-2.5 py-1 rounded-md">
                   {property.surface} m²
                 </div>
@@ -83,7 +84,7 @@ export const PropertiesCarousel = () => {
                 style={{ width: "80vw", maxWidth: "320px" }}
               >
                 <div className="relative overflow-hidden aspect-[4/3]">
-                  <img src={property.images[0]?.src} alt={property.title} className="w-full h-full object-cover" loading="lazy" />
+                  <Image src={property.images[0]?.src || ""} alt={property.title} width={600} height={450} sizes="80vw" className="w-full h-full object-cover" loading="lazy" />
                   <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-navy text-[11px] font-medium px-2.5 py-1 rounded-md">
                     {property.surface} m²
                   </div>

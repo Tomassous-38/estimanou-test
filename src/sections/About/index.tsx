@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { CheckCircle2 } from "lucide-react";
 
 export const About = () => {
@@ -12,11 +13,14 @@ export const About = () => {
       <div className="relative flex flex-col md:flex-row items-center gap-12 md:gap-16 max-w-[1080px] mx-auto px-5 py-20 md:px-8 md:py-28">
         <div className="animate-fade-in-up md:w-5/12 flex-shrink-0">
           <div className="relative">
-            <img
+            <Image
               src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&h=900&fit=crop&crop=face&auto=format&q=80"
               alt="Valentin Bourassin — Expert immobilier à La Réunion"
               className="rounded-2xl object-cover object-top w-full h-[320px] md:h-[420px]"
               loading="lazy"
+              width={600}
+              height={400}
+              sizes="(max-width: 768px) 100vw, 33vw"
             />
             <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm text-navy text-xs font-medium px-4 py-2 rounded-lg shadow-sm">
               +10 ans d'expertise

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from "react";
+import Image from "next/image";
 import type { PropertyImage } from "@/types/property";
 
 interface PropertyGalleryProps {
@@ -17,10 +18,14 @@ export const PropertyGallery = ({ images, title }: PropertyGalleryProps) => {
     <div className="animate-fade-in-up">
       {/* Main image */}
       <div className="relative overflow-hidden rounded-2xl aspect-[16/10] mb-3">
-        <img
-          src={images[activeIndex]?.src}
+        <Image
+          src={images[activeIndex]?.src || ""}
           alt={images[activeIndex]?.alt || title}
+          width={800}
+          height={500}
+          sizes="(max-width: 768px) 100vw, 60vw"
           className="w-full h-full object-cover transition-opacity duration-500"
+          priority
         />
       </div>
 
@@ -37,9 +42,12 @@ export const PropertyGallery = ({ images, title }: PropertyGalleryProps) => {
                   : "opacity-60 hover:opacity-100"
               }`}
             >
-              <img
+              <Image
                 src={img.src}
                 alt={img.alt}
+                width={300}
+                height={225}
+                sizes="20vw"
                 className="w-full h-full object-cover"
                 loading="lazy"
               />

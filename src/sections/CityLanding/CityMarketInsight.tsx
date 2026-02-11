@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { CityLanding } from "@/types/city";
 import { CheckCircle2 } from "lucide-react";
@@ -20,11 +21,14 @@ export const CityMarketInsight = ({ city }: CityMarketInsightProps) => {
         {/* Image side */}
         <div className="animate-fade-in-up md:w-5/12 flex-shrink-0">
           <div className="relative">
-            <img
+            <Image
               src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=500&h=600&fit=crop"
               alt="Valentin Bourassin — Expert immobilier"
               className="rounded-2xl object-cover w-full h-[280px] md:h-[400px]"
               loading="lazy"
+              width={600}
+              height={400}
+              sizes="(max-width: 768px) 100vw, 33vw"
             />
             <div className="absolute -bottom-4 -right-4 bg-white rounded-xl shadow-lg p-4 hidden md:flex items-center gap-3">
               <div className="w-10 h-10 rounded-full bg-gold/15 flex items-center justify-center">

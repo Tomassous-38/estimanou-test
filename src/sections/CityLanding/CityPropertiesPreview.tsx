@@ -1,5 +1,6 @@
 'use client';
 
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import type { CityLanding } from "@/types/city";
@@ -43,11 +44,14 @@ export const CityPropertiesPreview = ({ city }: CityPropertiesPreviewProps) => {
               className="animate-fade-in-up group bg-white rounded-2xl overflow-hidden card-hover"
             >
               <div className="relative overflow-hidden aspect-[4/3]">
-                <img
+                <Image
                   src={property.images[0]?.src}
                   alt={property.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   loading="lazy"
+                  width={600}
+                  height={400}
+                  sizes="(max-width: 768px) 100vw, 33vw"
                 />
                 <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-navy text-[11px] font-medium px-2.5 py-1 rounded-md">
                   {property.surface} m²
@@ -86,11 +90,14 @@ export const CityPropertiesPreview = ({ city }: CityPropertiesPreviewProps) => {
               style={{ width: "80vw", maxWidth: "320px" }}
             >
               <div className="relative overflow-hidden aspect-[4/3]">
-                <img
+                <Image
                   src={property.images[0]?.src}
                   alt={property.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   loading="lazy"
+                  width={600}
+                  height={400}
+                  sizes="(max-width: 768px) 100vw, 33vw"
                 />
                 <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-navy text-[11px] font-medium px-2.5 py-1 rounded-md">
                   {property.surface} m²

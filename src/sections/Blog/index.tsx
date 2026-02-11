@@ -1,6 +1,7 @@
 'use client';
 
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 export const Blog = () => {
@@ -56,9 +57,12 @@ export const Blog = () => {
           {articles.map((article, index) => (
             <Link href={`/blog/${article.slug}`} key={index} className="animate-fade-in-up group cursor-pointer text-left block">
               <div className="relative overflow-hidden rounded-2xl mb-4 aspect-[3/2]">
-                <img
+                <Image
                   src={article.image}
                   alt={article.title}
+                  width={600}
+                  height={400}
+                  sizes="(max-width: 768px) 100vw, 33vw"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   loading="lazy"
                 />

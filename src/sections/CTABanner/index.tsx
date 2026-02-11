@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
@@ -5,11 +6,14 @@ export const CTABanner = () => {
   return (
     <section className="relative w-full overflow-hidden">
       <div className="absolute inset-0">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&h=800&fit=crop"
           alt="Plage de La Réunion"
           className="w-full h-full object-cover"
           loading="lazy"
+          width={1200}
+          height={600}
+          sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-navy/60 via-navy/70 to-navy/80" />
       </div>

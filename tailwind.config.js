@@ -57,6 +57,7 @@ module.exports = {
       },
       fontFamily: {
         sans: [
+          "var(--font-outfit)",
           "Outfit",
           "ui-sans-serif",
           "system-ui",
@@ -66,9 +67,9 @@ module.exports = {
           '"Segoe UI Symbol"',
           '"Noto Color Emoji"',
         ],
-        serif: ["Cormorant Garamond", "serif"],
-        cormorant: ["Cormorant Garamond", "serif"],
-        outfit: ["Outfit", "sans-serif"]
+        serif: ["var(--font-cormorant)", "Cormorant Garamond", "serif"],
+        cormorant: ["var(--font-cormorant)", "Cormorant Garamond", "serif"],
+        outfit: ["var(--font-outfit)", "Outfit", "sans-serif"]
       },
       keyframes: {
         "accordion-down": {

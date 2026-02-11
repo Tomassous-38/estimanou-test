@@ -1,6 +1,7 @@
 import type { BlogArticle } from "@/types/blog";
 import { Breadcrumb } from "./Breadcrumb";
 import { Clock, Calendar } from "lucide-react";
+import Image from "next/image";
 
 interface ArticleHeroProps {
   article: BlogArticle;
@@ -30,9 +31,11 @@ export const ArticleHero = ({ article }: ArticleHeroProps) => {
 
         <div className="animate-fade-in-up animate-delay-100 flex items-center gap-4 flex-wrap text-neutral-500 text-[14px] font-light mb-10" style={{ borderTop: '1px solid rgba(27, 58, 75, 0.06)', paddingTop: '1rem' }}>
           <div className="flex items-center gap-2.5">
-            <img
+            <Image
               src={article.author.avatar}
               alt={article.author.name}
+              width={36}
+              height={36}
               className="w-9 h-9 rounded-full object-cover ring-2 ring-white shadow-sm"
             />
             <div className="flex flex-col">
@@ -54,13 +57,14 @@ export const ArticleHero = ({ article }: ArticleHeroProps) => {
       </div>
 
       <div className="max-w-[1080px] mx-auto px-5 md:px-0">
-        <img
+        <Image
           src={article.heroImage.src}
           alt={article.heroImage.alt}
           width={article.heroImage.width}
           height={article.heroImage.height}
+          sizes="(max-width: 1080px) 100vw, 1080px"
           className="animate-fade-in-up animate-delay-200 w-full aspect-[16/9] object-cover rounded-2xl shadow-lg shadow-navy/5"
-          fetchPriority="high"
+          priority
         />
         {article.heroImage.caption && (
           <p className="text-neutral-500 text-[12px] font-light italic mt-3 text-center tracking-wide">

@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface ImageCaptionProps {
   src: string;
   alt: string;
@@ -14,9 +16,12 @@ export const ImageCaptionBlock = ({ src, alt, caption, width = "default" }: Imag
 
   return (
     <figure className={`my-8 ${widthClass}`}>
-      <img
+      <Image
         src={src}
         alt={alt}
+        width={1200}
+        height={675}
+        sizes="(max-width: 768px) 100vw, 800px"
         className={`w-full object-cover ${width === "full" ? "rounded-none md:rounded-xl" : "rounded-xl"}`}
         loading="lazy"
       />

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Bed, Maximize, Home } from "lucide-react";
 import type { Property } from "@/types/property";
 
@@ -22,9 +23,12 @@ export const PropertyCard = ({ property }: PropertyCardProps) => {
     >
       {/* Image */}
       <div className="relative overflow-hidden aspect-[3/2]">
-        <img
-          src={property.images[0]?.src}
+        <Image
+          src={property.images[0]?.src || ""}
           alt={property.images[0]?.alt || property.title}
+          width={600}
+          height={400}
+          sizes="(max-width: 768px) 100vw, 33vw"
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           loading="lazy"
         />

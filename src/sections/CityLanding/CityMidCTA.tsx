@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
 import type { CityLanding } from "@/types/city";
@@ -13,11 +14,14 @@ export const CityMidCTA = ({ city }: CityMidCTAProps) => {
   return (
     <section className="relative w-full min-h-[420px] md:min-h-[480px] flex items-center overflow-hidden">
       {/* Background image */}
-      <img
+      <Image
         src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&h=800&fit=crop&q=80"
         alt={`Estimation immobilière à ${city.name}`}
         className="absolute inset-0 w-full h-full object-cover"
         loading="lazy"
+        width={1200}
+        height={600}
+        sizes="100vw"
       />
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-navy/85 via-navy/80 to-navy/90" />

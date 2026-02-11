@@ -1,5 +1,6 @@
 'use client';
 
+import Image from "next/image";
 import { useState } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -79,11 +80,14 @@ export const MiseEnValeurGallery = () => {
               onClick={() => openLightbox(index)}
               className="animate-fade-in-up group relative aspect-[4/3] rounded-xl overflow-hidden cursor-pointer"
             >
-              <img
+              <Image
                 src={image.src}
                 alt={image.alt}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 loading="lazy"
+                width={800}
+                height={600}
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
               <div className="absolute inset-0 bg-navy/0 group-hover:bg-navy/20 transition-colors duration-300" />
             </button>
@@ -121,11 +125,14 @@ export const MiseEnValeurGallery = () => {
             <ChevronRight className="w-8 h-8" strokeWidth={1.5} />
           </button>
 
-          <img
+          <Image
             src={galleryImages[lightboxIndex].src.replace(/w_800,h_600/, "w_1400,h_1050")}
             alt={galleryImages[lightboxIndex].alt}
             className="max-w-full max-h-[85vh] object-contain rounded-lg"
             onClick={(e) => e.stopPropagation()}
+            width={800}
+            height={600}
+            sizes="(max-width: 768px) 100vw, 50vw"
           />
 
           <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/50 text-sm font-light">
