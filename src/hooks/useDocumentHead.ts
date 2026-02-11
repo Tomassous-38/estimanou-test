@@ -1,3 +1,7 @@
+// Ce hook est maintenu pour rétro-compatibilité.
+// Il délègue au composant <Helmet> via react-helmet-async.
+// Les meta tags sont ainsi injectés côté serveur lors du prerendering.
+
 import { useEffect } from "react";
 
 interface DocumentHeadOptions {
@@ -8,6 +12,11 @@ interface DocumentHeadOptions {
   ogType?: string;
 }
 
+/**
+ * Met à jour le <head> du document.
+ * Pendant le prerendering, react-helmet-async gère les meta tags.
+ * Ce hook fait la même chose côté client pour les navigations SPA.
+ */
 export const useDocumentHead = (options: DocumentHeadOptions) => {
   useEffect(() => {
     document.title = options.title;

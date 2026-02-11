@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Pages principales -->
+  <url><loc>https://estimanou.re/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://estimanou.re/estimer</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://estimanou.re/biens-a-vendre</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://estimanou.re/blog</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://estimanou.re/mise-en-valeur</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
+  <!-- Pages villes (estimation immobilière) -->
+  <url><loc>https://estimanou.re/estimation-immobiliere/saint-denis</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://estimanou.re/estimation-immobiliere/saint-pierre</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://estimanou.re/estimation-immobiliere/saint-paul</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://estimanou.re/estimation-immobiliere/le-tampon</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://estimanou.re/estimation-immobiliere/saint-leu</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://estimanou.re/estimation-immobiliere/saint-gilles</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+
+  <!-- Biens par ville -->
+  <url><loc>https://estimanou.re/biens-a-vendre/saint-denis</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://estimanou.re/biens-a-vendre/saint-pierre</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://estimanou.re/biens-a-vendre/saint-paul</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://estimanou.re/biens-a-vendre/le-tampon</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://estimanou.re/biens-a-vendre/saint-leu</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://estimanou.re/biens-a-vendre/saint-gilles</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+
+  <!-- Biens individuels -->
+  <url><loc>https://estimanou.re/biens-a-vendre/saint-denis/appartement-t3-moufia</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://estimanou.re/biens-a-vendre/saint-denis/maison-t5-la-montagne</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://estimanou.re/biens-a-vendre/saint-pierre/maison-t4-ligne-paradis</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://estimanou.re/biens-a-vendre/saint-pierre/terrain-ravine-des-cabris</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://estimanou.re/biens-a-vendre/saint-paul/villa-t5-vue-belle</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://estimanou.re/biens-a-vendre/saint-paul/appartement-t2-centre-ville-saint-paul</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://estimanou.re/biens-a-vendre/le-tampon/maison-t4-trois-mares</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://estimanou.re/biens-a-vendre/le-tampon/maison-t3-14eme-km</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://estimanou.re/biens-a-vendre/saint-gilles/villa-t6-stella</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://estimanou.re/biens-a-vendre/saint-leu/local-commercial-centre-saint-leu</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://estimanou.re/biens-a-vendre/saint-gilles/appartement-t4-boucan-canot</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://estimanou.re/biens-a-vendre/saint-gilles/villa-t5-lhermitage</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
+  <!-- Articles de blog -->
+  <url><loc>https://estimanou.re/blog/bilan-2024-marche-immobilier-reunion</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://estimanou.re/blog/pourquoi-faire-estimer-avant-de-vendre</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://estimanou.re/blog/erreurs-qui-font-baisser-la-valeur</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+</urlset>
