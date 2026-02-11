@@ -1,3 +1,5 @@
+'use client';
+
 import { motion, AnimatePresence } from 'framer-motion';
 import { useEstimationStore } from '@/lib/store';
 import { OBJECTIF_OPTIONS, DELAI_OPTIONS, OCCUPATION_BIEN_OPTIONS } from '@/lib/constants';

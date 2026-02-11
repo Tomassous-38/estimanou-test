@@ -1,3 +1,5 @@
+'use client';
+
 import { Facebook, Twitter, Linkedin, Link2, Check } from "lucide-react";
 import { useState } from "react";
 import type { BlogArticle } from "@/types/blog";

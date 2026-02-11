@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import type { Property } from "@/types/property";
 import { getCityBySlug, getAllCities } from "@/data/cities";
 
@@ -62,7 +62,7 @@ export const PropertyDetailSEOText = ({ property }: PropertyDetailSEOTextProps) 
                 quartier de {property.neighborhood} se situe dans la fourchette haute/basse
                 de la commune, selon son attractivité et ses équipements. Pour en savoir plus
                 sur les prix par quartier et les tendances du marché local, consultez notre{" "}
-                <Link to={`/estimation-immobiliere/${city.slug}`}>
+                <Link href={`/estimation-immobiliere/${city.slug}`}>
                   page d'estimation immobilière à {city.name}
                 </Link>
                 .
@@ -189,20 +189,20 @@ export const PropertyDetailSEOText = ({ property }: PropertyDetailSEOTextProps) 
           </p>
           <ul>
             <li>
-              <Link to={`/biens-a-vendre/${property.citySlug}`}>
+              <Link href={`/biens-a-vendre/${property.citySlug}`}>
                 Tous les biens à vendre à {property.cityName}
               </Link>{" "}
               — appartements, maisons, villas et terrains expertisés par Estimanou.
             </li>
             <li>
-              <Link to="/biens-a-vendre">
+              <Link href="/biens-a-vendre">
                 Tous les biens à vendre à La Réunion
               </Link>{" "}
               — parcourez l'ensemble de notre catalogue avec filtres avancés.
             </li>
             {city && (
               <li>
-                <Link to={`/estimation-immobiliere/${city.slug}`}>
+                <Link href={`/estimation-immobiliere/${city.slug}`}>
                   Estimation immobilière à {city.name}
                 </Link>{" "}
                 — découvrez les prix au m², les quartiers et les tendances du marché.
@@ -218,11 +218,11 @@ export const PropertyDetailSEOText = ({ property }: PropertyDetailSEOTextProps) 
           <ul>
             {otherCities.map((c) => (
               <li key={c.slug}>
-                <Link to={`/biens-a-vendre/${c.slug}`}>
+                <Link href={`/biens-a-vendre/${c.slug}`}>
                   Biens à vendre à {c.name}
                 </Link>{" "}
                 — prix moyen {c.stats.avgPricePerSqm}/m².{" "}
-                <Link to={`/estimation-immobiliere/${c.slug}`}>
+                <Link href={`/estimation-immobiliere/${c.slug}`}>
                   Estimation à {c.name}
                 </Link>
                 .

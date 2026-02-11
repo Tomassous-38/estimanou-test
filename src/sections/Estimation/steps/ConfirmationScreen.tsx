@@ -1,3 +1,5 @@
+'use client';
+
 import { motion } from 'framer-motion';
 import { Check, Phone, Mail, MapPin, Home } from 'lucide-react';
 import { useEstimationStore } from '@/lib/store';

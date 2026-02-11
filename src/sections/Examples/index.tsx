@@ -1,5 +1,7 @@
+'use client';
+
 import { useRef } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export const Examples = () => {
@@ -46,7 +48,7 @@ export const Examples = () => {
               Chaque estimation est unique. Voici un aperçu de biens récemment évalués dans nos secteurs.
             </p>
           </div>
-          <Link to="/estimer" className="hidden md:inline-flex items-center gap-2 text-navy/60 text-[12px] tracking-wide border border-navy/12 rounded-full px-5 py-2 hover:bg-navy hover:text-white transition-all duration-300 flex-shrink-0 mt-4 md:mt-0">
+          <Link href="/estimer" className="hidden md:inline-flex items-center gap-2 text-navy/60 text-[12px] tracking-wide border border-navy/12 rounded-full px-5 py-2 hover:bg-navy hover:text-white transition-all duration-300 flex-shrink-0 mt-4 md:mt-0">
             voir tout
             <ArrowRight className="w-3 h-3" strokeWidth={1.5} />
           </Link>

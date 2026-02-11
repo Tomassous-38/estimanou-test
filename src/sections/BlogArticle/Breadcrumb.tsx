@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 
 interface BreadcrumbProps {
@@ -46,7 +46,7 @@ export const Breadcrumb = ({ category, title }: BreadcrumbProps) => {
           <span key={i} className="flex items-center gap-1.5">
             {item.href ? (
               <Link
-                to={item.href}
+                href={item.href}
                 className="text-neutral-500 text-[12px] uppercase tracking-[0.15em] font-light hover:text-navy transition-colors"
               >
                 {item.label}

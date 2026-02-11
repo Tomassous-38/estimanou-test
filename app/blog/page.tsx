@@ -1,31 +1,31 @@
-import { Link } from "react-router-dom";
-import { useScrollAnimations } from "@/hooks/useScrollAnimations";
-import { useDocumentHead } from "@/hooks/useDocumentHead";
+import type { Metadata } from "next";
+import Link from "next/link";
 import { articles } from "@/data/articles";
-import { Header } from "@/sections/Header";
-import { Footer } from "@/sections/Footer";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { ArrowRight } from "lucide-react";
 
-const formatDate = (iso: string) => {
-  const d = new Date(iso);
-  return d.toLocaleDateString("fr-FR", { day: "numeric", month: "short", year: "numeric" });
+export const metadata: Metadata = {
+  title: "Blog — Actualités immobilières à La Réunion",
+  description:
+    "Retrouvez tous nos articles sur le marché immobilier réunionnais : tendances, conseils, guides et analyses pour les propriétaires de l'Ouest.",
+  alternates: { canonical: "https://estimanou.re/blog" },
 };
 
-export const BlogListPage = () => {
-  useScrollAnimations();
-  useDocumentHead(
-    "Blog — Estimanou | Actualités immobilières à La Réunion",
-    "Retrouvez tous nos articles sur le marché immobilier réunionnais : tendances, conseils, guides et analyses pour les propriétaires de l'Ouest."
-  );
+const formatDate = (iso: string) => {
+  const d = new Date(iso);
+  return d.toLocaleDateString("fr-FR", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  });
+};
 
+export default function BlogListPage() {
   const featured = articles[0];
   const rest = articles.slice(1);
 
   return (
     <>
-      <Header />
-
       {/* Hero */}
       <section className="relative bg-sage/40 w-full pt-[120px] md:pt-[140px] pb-16 md:pb-20">
         <div className="max-w-[1080px] mx-auto px-5 md:px-8">
@@ -42,7 +42,8 @@ export const BlogListPage = () => {
             <em className="italic font-normal text-navy/70">articles</em>
           </h1>
           <p className="text-neutral-600 text-base font-light leading-relaxed max-w-lg">
-            Tendances du marché, conseils de vente et guides pratiques pour les propriétaires réunionnais.
+            Tendances du marché, conseils de vente et guides pratiques pour les
+            propriétaires réunionnais.
           </p>
         </div>
       </section>
@@ -51,8 +52,8 @@ export const BlogListPage = () => {
       <section className="relative bg-white w-full">
         <div className="max-w-[1080px] mx-auto px-5 md:px-8 py-16 md:py-20">
           <Link
-            to={`/blog/${featured.slug}`}
-            className="animate-fade-in-up group flex flex-col md:flex-row gap-8 md:gap-12"
+            href={`/blog/${featured.slug}`}
+            className="group flex flex-col md:flex-row gap-8 md:gap-12"
           >
             <div className="md:w-7/12 relative overflow-hidden rounded-2xl aspect-[3/2]">
               <img
@@ -78,8 +79,11 @@ export const BlogListPage = () => {
                 <span>{featured.readingTimeMinutes} min de lecture</span>
               </div>
               <div className="inline-flex items-center gap-2 text-navy/50 text-[12px] font-normal tracking-wide group-hover:text-navy transition-colors duration-300">
-                Lire l'article
-                <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" strokeWidth={1.5} />
+                Lire l&apos;article
+                <ArrowRight
+                  className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1"
+                  strokeWidth={1.5}
+                />
               </div>
             </div>
           </Link>
@@ -90,17 +94,19 @@ export const BlogListPage = () => {
       {rest.length > 0 && (
         <section className="relative bg-sage/40 w-full">
           <div className="max-w-[1080px] mx-auto px-5 md:px-8 py-16 md:py-20">
-            <h2 className="animate-fade-in-up section-title mb-12">
+            <h2 className="section-title mb-12">
               Tous les{" "}
-              <em className="font-cormorant italic font-normal text-navy/70">articles</em>
+              <em className="font-cormorant italic font-normal text-navy/70">
+                articles
+              </em>
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
               {rest.map((article) => (
                 <Link
-                  to={`/blog/${article.slug}`}
+                  href={`/blog/${article.slug}`}
                   key={article.slug}
-                  className="animate-fade-in-up group bg-white rounded-2xl overflow-hidden card-hover"
+                  className="group bg-white rounded-2xl overflow-hidden card-hover"
                 >
                   <div className="relative overflow-hidden aspect-[3/2]">
                     <img
@@ -127,7 +133,7 @@ export const BlogListPage = () => {
                       {article.excerpt}
                     </p>
                     <div className="flex items-center gap-1.5 text-navy/50 text-[11px] font-normal tracking-wide underline underline-offset-2 decoration-navy/15 group-hover:text-navy/70 transition-colors duration-300">
-                      lire l'article
+                      lire l&apos;article
                     </div>
                   </div>
                 </Link>
@@ -136,8 +142,6 @@ export const BlogListPage = () => {
           </div>
         </section>
       )}
-
-      <Footer />
     </>
   );
-};
+}

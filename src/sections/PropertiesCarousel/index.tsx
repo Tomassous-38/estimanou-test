@@ -1,5 +1,7 @@
+'use client';
+
 import { useRef } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { getAllProperties } from "@/data/properties";
 
@@ -24,7 +26,7 @@ export const PropertiesCarousel = () => {
               Tous nos biens sont accompagnés d'une fourchette d'estimation transparente, pour acheter en toute confiance.
             </p>
           </div>
-          <Link to="/biens-a-vendre" className="hidden md:inline-flex items-center gap-2 text-navy/60 text-[12px] tracking-wide border border-navy/12 rounded-full px-5 py-2 hover:bg-navy hover:text-white transition-all duration-300 flex-shrink-0 mt-4 md:mt-0">
+          <Link href="/biens-a-vendre" className="hidden md:inline-flex items-center gap-2 text-navy/60 text-[12px] tracking-wide border border-navy/12 rounded-full px-5 py-2 hover:bg-navy hover:text-white transition-all duration-300 flex-shrink-0 mt-4 md:mt-0">
             Voir tous les biens
             <ArrowRight className="w-3 h-3" strokeWidth={1.5} />
           </Link>
@@ -35,7 +37,7 @@ export const PropertiesCarousel = () => {
           {properties.slice(0, 3).map((property) => (
             <Link
               key={property.slug}
-              to={`/biens-a-vendre/${property.citySlug}/${property.slug}`}
+              href={`/biens-a-vendre/${property.citySlug}/${property.slug}`}
               className="animate-fade-in-up group bg-white rounded-2xl overflow-hidden card-hover"
             >
               <div className="relative overflow-hidden aspect-[4/3]">
@@ -76,7 +78,7 @@ export const PropertiesCarousel = () => {
             {properties.slice(0, 4).map((property) => (
               <Link
                 key={property.slug}
-                to={`/biens-a-vendre/${property.citySlug}/${property.slug}`}
+                href={`/biens-a-vendre/${property.citySlug}/${property.slug}`}
                 className="group bg-white rounded-2xl overflow-hidden card-hover flex-shrink-0 snap-start"
                 style={{ width: "80vw", maxWidth: "320px" }}
               >
@@ -106,14 +108,14 @@ export const PropertiesCarousel = () => {
         {/* Double CTA */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mt-10">
           <Link
-            to="/biens-a-vendre"
+            href="/biens-a-vendre"
             className="inline-flex items-center justify-center gap-2 text-navy/60 text-[12px] tracking-wide border border-navy/12 rounded-full px-6 py-2.5 hover:bg-navy hover:text-white transition-all duration-300"
           >
             Voir tous les biens à vendre
             <ArrowRight className="w-3 h-3" strokeWidth={1.5} />
           </Link>
           <Link
-            to="/estimer"
+            href="/estimer"
             className="inline-flex items-center justify-center gap-2 bg-navy text-white text-[12px] tracking-wide rounded-full px-6 py-2.5 hover:bg-navy/90 transition-all duration-300"
           >
             Faire estimer mon bien gratuitement

@@ -1,19 +1,10 @@
 import type { CityLanding } from "@/types/city";
-import { useDocumentHead } from "@/hooks/useDocumentHead";
 
 interface CityLandingSEOProps {
   city: CityLanding;
 }
 
 export const CityLandingSEO = ({ city }: CityLandingSEOProps) => {
-  useDocumentHead({
-    title: `Estimation immobilière à ${city.name} (La Réunion) | Estimanou`,
-    description: `Faites estimer votre bien à ${city.name} gratuitement. Prix moyen ${city.stats.avgPricePerSqm}/m², ${city.stats.estimationsCount} estimations réalisées. Résultat sous 48h.`,
-    canonicalUrl: `https://estimanou.re/estimation-immobiliere/${city.slug}`,
-    ogImage: city.heroImage,
-    ogType: "website",
-  });
-
   // LocalBusiness JSON-LD
   const localBusinessJsonLd = {
     "@context": "https://schema.org",

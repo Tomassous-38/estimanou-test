@@ -1,7 +1,10 @@
-import { Link, useLocation } from "react-router-dom";
+'use client';
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export const DesktopNav = () => {
-  const { pathname } = useLocation();
+  const pathname = usePathname();
   const isHome = pathname === "/";
 
   const linkClass =
@@ -32,7 +35,7 @@ export const DesktopNav = () => {
               {link.label}
             </a>
           ) : (
-            <Link to={`/${link.href}`} className={linkClass}>
+            <Link href={`/${link.href}`} className={linkClass}>
               {link.label}
             </Link>
           )}
@@ -43,7 +46,7 @@ export const DesktopNav = () => {
         return (
           <li key={link.href}>
             <Link
-              to={link.href}
+              href={link.href}
               className={isActive ? activeLinkClass : linkClass}
             >
               {link.label}

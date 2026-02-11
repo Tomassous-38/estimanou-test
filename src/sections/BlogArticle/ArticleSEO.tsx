@@ -1,20 +1,10 @@
 import type { BlogArticle } from "@/types/blog";
-import { useDocumentHead } from "@/hooks/useDocumentHead";
 
 interface ArticleSEOProps {
   article: BlogArticle;
 }
 
 export const ArticleSEO = ({ article }: ArticleSEOProps) => {
-  // Set document head meta tags
-  useDocumentHead({
-    title: `${article.title} | Estimanou - Blog Immobilier`,
-    description: article.excerpt,
-    canonicalUrl: `https://estimanou.re/blog/${article.slug}`,
-    ogImage: article.heroImage.src,
-    ogType: "article",
-  });
-
   // BlogPosting JSON-LD
   const articleJsonLd = {
     "@context": "https://schema.org",

@@ -1,3 +1,5 @@
+'use client';
+
 import { motion, AnimatePresence } from 'framer-motion';
 import { Home, Building2, Trees, Building, Store } from 'lucide-react';
 import { useEstimationStore } from '@/lib/store';

@@ -1,3 +1,5 @@
+'use client';
+
 import { useState, useEffect } from "react";
 import { Logo } from "@/sections/Header/components/Logo";
 import { MobileMenuButton } from "@/sections/Header/components/MobileMenuButton";

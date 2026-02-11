@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { getAllCities } from "@/data/cities";
 
 export const HomeSEOText = () => {
@@ -56,12 +56,12 @@ export const HomeSEOText = () => {
           <ul>
             {cities.map((city) => (
               <li key={city.slug}>
-                <Link to={`/estimation-immobiliere/${city.slug}`}>
+                <Link href={`/estimation-immobiliere/${city.slug}`}>
                   Estimation immobilière à {city.name}
                 </Link>{" "}
                 — prix moyen {city.stats.avgPricePerSqm}/m²,{" "}
                 {city.stats.estimationsCount} estimations réalisées.{" "}
-                <Link to={`/biens-a-vendre/${city.slug}`}>
+                <Link href={`/biens-a-vendre/${city.slug}`}>
                   Voir les biens à {city.name}
                 </Link>
                 .
@@ -91,7 +91,7 @@ export const HomeSEOText = () => {
           <h3>Tous les biens estimés à La Réunion</h3>
           <p>
             Consultez notre catalogue de{" "}
-            <Link to="/biens-a-vendre">biens à vendre à La Réunion</Link>,
+            <Link href="/biens-a-vendre">biens à vendre à La Réunion</Link>,
             tous accompagnés d'une <strong>fourchette d'estimation transparente</strong>.
             Appartements, maisons, villas, terrains et locaux commerciaux : filtrez par ville,
             type de bien et budget pour trouver la propriété qui vous correspond.

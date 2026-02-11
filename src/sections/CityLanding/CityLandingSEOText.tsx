@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import type { CityLanding } from "@/types/city";
 import { getAllCities } from "@/data/cities";
 
@@ -122,14 +122,14 @@ export const CityLandingSEOText = ({ city }: CityLandingSEOTextProps) => {
           </p>
           <ul>
             <li>
-              <Link to={`/biens-a-vendre/${city.slug}`}>
+              <Link href={`/biens-a-vendre/${city.slug}`}>
                 Tous les biens à vendre à {city.name}
               </Link>{" "}
               — appartements, maisons, villas, terrains et locaux commerciaux estimés par
               nos experts.
             </li>
             <li>
-              <Link to="/biens-a-vendre">
+              <Link href="/biens-a-vendre">
                 Voir tous les biens à vendre à La Réunion
               </Link>{" "}
               — explorez l'ensemble de notre catalogue avec filtres par ville, type et budget.
@@ -144,12 +144,12 @@ export const CityLandingSEOText = ({ city }: CityLandingSEOTextProps) => {
           <ul>
             {otherCities.map((c) => (
               <li key={c.slug}>
-                <Link to={`/estimation-immobiliere/${c.slug}`}>
+                <Link href={`/estimation-immobiliere/${c.slug}`}>
                   Estimation immobilière à {c.name}
                 </Link>{" "}
                 — prix moyen {c.stats.avgPricePerSqm}/m², {c.stats.estimationsCount}{" "}
                 estimations réalisées.{" "}
-                <Link to={`/biens-a-vendre/${c.slug}`}>
+                <Link href={`/biens-a-vendre/${c.slug}`}>
                   Voir les biens à {c.name}
                 </Link>
                 .

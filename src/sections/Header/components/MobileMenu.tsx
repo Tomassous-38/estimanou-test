@@ -1,4 +1,7 @@
-import { Link, useLocation } from "react-router-dom";
+'use client';
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { X } from "lucide-react";
 
 type MobileMenuProps = {
@@ -7,7 +10,7 @@ type MobileMenuProps = {
 };
 
 export const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
-  const { pathname } = useLocation();
+  const pathname = usePathname();
   const isHome = pathname === "/";
 
   const anchorLinks = [
@@ -77,7 +80,7 @@ export const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                     </a>
                   ) : (
                     <Link
-                      to={`/${link.href}`}
+                      href={`/${link.href}`}
                       onClick={onClose}
                       className="block py-2.5 text-neutral-700 text-[15px] font-light hover:text-navy transition-colors"
                     >
@@ -100,7 +103,7 @@ export const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                 return (
                   <li key={link.href}>
                     <Link
-                      to={link.href}
+                      href={link.href}
                       onClick={onClose}
                       className={`block py-2.5 text-[15px] font-light transition-colors ${
                         isActive ? "text-navy font-normal" : "text-neutral-700 hover:text-navy"
@@ -125,7 +128,7 @@ export const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                 return (
                   <li key={link.href}>
                     <Link
-                      to={link.href}
+                      href={link.href}
                       onClick={onClose}
                       className={`block py-2.5 text-[15px] font-light transition-colors ${
                         isActive ? "text-navy font-normal" : "text-neutral-700 hover:text-navy"
@@ -141,7 +144,7 @@ export const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
 
           {/* CTA */}
           <Link
-            to="/estimer"
+            href="/estimer"
             onClick={onClose}
             className="block w-full text-center text-white text-[13px] bg-navy px-6 py-3.5 rounded-full hover:bg-navy/90 transition-all duration-300 font-normal uppercase tracking-[0.15em]"
           >

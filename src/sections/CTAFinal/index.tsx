@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export const CTAFinal = () => {
@@ -25,7 +25,7 @@ export const CTAFinal = () => {
         </p>
 
         <Link
-          to="/estimer"
+          href="/estimer"
           className="animate-fade-in-up group text-navy text-[13px] items-center bg-white inline-flex justify-center text-center px-10 py-4 md:px-12 md:py-5 rounded-full hover:bg-white/90 transition-all duration-500 hover:shadow-xl uppercase tracking-[0.2em] font-normal"
         >
           Estimer gratuitement

@@ -1,5 +1,7 @@
+'use client';
+
 import { useState, useRef } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 
 interface CityCard {
@@ -153,7 +155,7 @@ export const Secteurs = () => {
             {activeSecteur.cities.map((city) => (
               <Link
                 key={city.slug + activeTab}
-                to={`/estimation-immobiliere/${city.slug}`}
+                href={`/estimation-immobiliere/${city.slug}`}
                 className="group flex-shrink-0 snap-start bg-white rounded-2xl overflow-hidden text-left hover:shadow-md transition-all duration-300"
                 style={{ width: "260px" }}
               >

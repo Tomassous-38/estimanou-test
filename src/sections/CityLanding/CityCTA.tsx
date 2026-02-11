@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import type { CityLanding } from "@/types/city";
 
@@ -34,7 +34,7 @@ export const CityCTA = ({ city }: CityCTAProps) => {
               <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" strokeWidth={1.5} />
             </a>
             <Link
-              to={`/biens-a-vendre/${city.slug}`}
+              href={`/biens-a-vendre/${city.slug}`}
               className="inline-flex items-center gap-2 text-white/50 text-[13px] font-light tracking-wide border border-white/15 px-6 py-3 rounded-full hover:bg-white/10 hover:text-white transition-all duration-300"
             >
               Voir les biens à {city.name}

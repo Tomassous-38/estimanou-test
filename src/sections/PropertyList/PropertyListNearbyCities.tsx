@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { MapPin, ArrowRight } from "lucide-react";
 import { getAllCities } from "@/data/cities";
 import { getPropertiesByCity } from "@/data/properties";
@@ -41,7 +41,7 @@ export const PropertyListNearbyCities = ({ currentCitySlug }: PropertyListNearby
             return (
               <Link
                 key={city.slug}
-                to={`/biens-a-vendre/${city.slug}`}
+                href={`/biens-a-vendre/${city.slug}`}
                 className="group flex items-start gap-3 p-5 rounded-xl transition-all duration-300 hover:shadow-md"
                 style={{ border: "1px solid rgba(27, 58, 75, 0.08)" }}
               >
@@ -69,7 +69,7 @@ export const PropertyListNearbyCities = ({ currentCitySlug }: PropertyListNearby
             {allCities.map((city) => (
               <Link
                 key={city.slug}
-                to={`/estimation-immobiliere/${city.slug}`}
+                href={`/estimation-immobiliere/${city.slug}`}
                 className="text-navy/50 text-[11px] font-light tracking-wide px-3 py-1.5 rounded-full border border-navy/8 hover:bg-navy hover:text-white transition-all duration-300"
               >
                 Estimation {city.name}

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { getRelatedArticles } from "@/data/articles";
 
 interface SidebarRelatedArticlesProps {
@@ -19,7 +19,7 @@ export const SidebarRelatedArticles = ({ currentSlug }: SidebarRelatedArticlesPr
         {related.map((article) => (
           <Link
             key={article.slug}
-            to={`/blog/${article.slug}`}
+            href={`/blog/${article.slug}`}
             className="group flex gap-3"
           >
             <img

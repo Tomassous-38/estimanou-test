@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 export type FooterColumnProps = {
   title: string;
@@ -39,7 +39,7 @@ export const FooterColumn = (props: FooterColumnProps) => {
           return (
             <Link
               key={index}
-              to={link.href}
+              href={link.href}
               className={linkClass}
             >
               {link.text}

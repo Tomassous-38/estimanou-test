@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import type { CityLanding } from "@/types/city";
 import { CheckCircle2 } from "lucide-react";
 
@@ -57,7 +57,7 @@ export const CityMarketInsight = ({ city }: CityMarketInsightProps) => {
             ))}
           </ul>
           <Link
-            to={`/biens-a-vendre/${city.slug}`}
+            href={`/biens-a-vendre/${city.slug}`}
             className="inline-flex items-center gap-2 text-gold text-[13px] font-medium tracking-wide hover:text-navy transition-colors"
           >
             Voir les biens estimés à {city.name} →

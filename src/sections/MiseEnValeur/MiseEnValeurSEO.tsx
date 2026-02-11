@@ -1,12 +1,4 @@
-import { useDocumentHead } from "@/hooks/useDocumentHead";
-
 export const MiseEnValeurSEO = () => {
-  useDocumentHead({
-    title: "Mise en valeur de votre bien | Estimanou",
-    description:
-      "Découvrez comment Estimanou met en valeur votre bien immobilier à La Réunion. Photos professionnelles, vidéo drone et présentation soignée pour vendre au meilleur prix.",
-  });
-
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",

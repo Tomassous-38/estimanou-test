@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import type { CityLanding } from "@/types/city";
 import { getAllCities } from "@/data/cities";
 
@@ -26,7 +26,7 @@ const CityPropertySEO = ({ city }: { city: CityLanding }) => {
         vous soyez primo-accédant, investisseur locatif ou en quête d'une résidence secondaire,
         cette ville offre un panel de biens variés répondant à toutes les attentes. Chez{" "}
         <strong>Estimanou</strong>, chaque bien que nous présentons a été{" "}
-        <Link to={`/estimation-immobiliere/${city.slug}`}>
+        <Link href={`/estimation-immobiliere/${city.slug}`}>
           estimé par un expert local de {city.name}
         </Link>{" "}
         pour vous garantir une fourchette de prix fiable et transparente.
@@ -49,7 +49,7 @@ const CityPropertySEO = ({ city }: { city: CityLanding }) => {
         En fonction de votre budget et de vos priorités (proximité des commerces, calme
         résidentiel, vue mer, accès transports), nos experts peuvent vous orienter vers le
         quartier le plus adapté. N'hésitez pas à{" "}
-        <Link to={`/estimation-immobiliere/${city.slug}`}>
+        <Link href={`/estimation-immobiliere/${city.slug}`}>
           consulter notre page d'estimation à {city.name}
         </Link>{" "}
         pour découvrir les spécificités de chaque secteur.
@@ -148,12 +148,12 @@ const CityPropertySEO = ({ city }: { city: CityLanding }) => {
       <ul>
         {otherCities.map((c) => (
           <li key={c.slug}>
-            <Link to={`/biens-a-vendre/${c.slug}`}>
+            <Link href={`/biens-a-vendre/${c.slug}`}>
               Biens à vendre à {c.name}
             </Link>{" "}
             — prix moyen {c.stats.avgPricePerSqm}/m², évolution {c.stats.priceEvolution}.
             Vous pouvez aussi{" "}
-            <Link to={`/estimation-immobiliere/${c.slug}`}>
+            <Link href={`/estimation-immobiliere/${c.slug}`}>
               découvrir l'estimation immobilière à {c.name}
             </Link>
             .
@@ -286,11 +286,11 @@ const GlobalPropertySEO = () => {
       <ul>
         {allCities.map((c) => (
           <li key={c.slug}>
-            <Link to={`/biens-a-vendre/${c.slug}`}>
+            <Link href={`/biens-a-vendre/${c.slug}`}>
               Biens à vendre à {c.name}
             </Link>{" "}
             — {c.stats.avgPricePerSqm}/m² en moyenne.{" "}
-            <Link to={`/estimation-immobiliere/${c.slug}`}>
+            <Link href={`/estimation-immobiliere/${c.slug}`}>
               Estimation immobilière à {c.name}
             </Link>
             .

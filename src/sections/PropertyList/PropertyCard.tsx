@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Bed, Maximize, Home } from "lucide-react";
 import type { Property } from "@/types/property";
 
@@ -17,7 +17,7 @@ const typeLabels: Record<string, string> = {
 export const PropertyCard = ({ property }: PropertyCardProps) => {
   return (
     <Link
-      to={`/biens-a-vendre/${property.citySlug}/${property.slug}`}
+      href={`/biens-a-vendre/${property.citySlug}/${property.slug}`}
       className="animate-fade-in-up group bg-white rounded-2xl overflow-hidden card-hover"
     >
       {/* Image */}

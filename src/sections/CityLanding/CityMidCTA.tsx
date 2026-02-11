@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
 import type { CityLanding } from "@/types/city";
 import { getNeighborhoodPriceRange } from "@/types/city";
@@ -49,7 +49,7 @@ export const CityMidCTA = ({ city }: CityMidCTAProps) => {
           </p>
 
           <Link
-            to="/estimer"
+            href="/estimer"
             className="group inline-flex items-center gap-2.5 bg-white text-navy text-[13px] font-normal uppercase tracking-[0.15em] px-9 py-4 rounded-full hover:shadow-xl transition-all duration-500 mb-8"
           >
             Estimer mon bien à {city.name}

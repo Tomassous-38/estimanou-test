@@ -1,5 +1,7 @@
+'use client';
+
 import { ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 export const Blog = () => {
   const articles = [
@@ -44,7 +46,7 @@ export const Blog = () => {
               le marché pour mieux décider
             </h2>
           </div>
-          <Link to="/blog" className="hidden md:inline-flex items-center gap-2 text-navy/60 text-[12px] tracking-wide border border-navy/12 rounded-full px-5 py-2 hover:bg-navy hover:text-white transition-all duration-300 flex-shrink-0 mt-4 md:mt-0">
+          <Link href="/blog" className="hidden md:inline-flex items-center gap-2 text-navy/60 text-[12px] tracking-wide border border-navy/12 rounded-full px-5 py-2 hover:bg-navy hover:text-white transition-all duration-300 flex-shrink-0 mt-4 md:mt-0">
             tous les articles
             <ArrowRight className="w-3 h-3" strokeWidth={1.5} />
           </Link>
@@ -52,7 +54,7 @@ export const Blog = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 w-full">
           {articles.map((article, index) => (
-            <Link to={`/blog/${article.slug}`} key={index} className="animate-fade-in-up group cursor-pointer text-left block">
+            <Link href={`/blog/${article.slug}`} key={index} className="animate-fade-in-up group cursor-pointer text-left block">
               <div className="relative overflow-hidden rounded-2xl mb-4 aspect-[3/2]">
                 <img
                   src={article.image}

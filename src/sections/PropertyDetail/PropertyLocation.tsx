@@ -1,5 +1,5 @@
 import { MapPin } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import type { Property } from "@/types/property";
 
 interface PropertyLocationProps {
@@ -39,7 +39,7 @@ export const PropertyLocation = ({ property }: PropertyLocationProps) => {
       </div>
 
       <Link
-        to={`/estimation-immobiliere/${property.citySlug}`}
+        href={`/estimation-immobiliere/${property.citySlug}`}
         className="inline-flex items-center gap-1.5 text-navy/60 text-[12px] tracking-wide mt-4 hover:text-navy transition-colors"
       >
         Voir le marché immobilier à {property.cityName} →

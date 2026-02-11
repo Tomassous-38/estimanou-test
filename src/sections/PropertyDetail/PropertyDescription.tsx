@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import type { Property } from "@/types/property";
 
 interface PropertyDescriptionProps {
@@ -29,7 +29,7 @@ export const PropertyDescription = ({ property }: PropertyDescriptionProps) => {
         <div className="text-neutral-400 text-[12px] font-light mt-1">
           Fourchette estimée par nos experts locaux —{" "}
           <Link
-            to={`/estimation-immobiliere/${property.citySlug}`}
+            href={`/estimation-immobiliere/${property.citySlug}`}
             className="text-gold underline underline-offset-2 decoration-gold/30 hover:decoration-gold transition-all"
           >
             En savoir plus sur l'estimation à {property.cityName}

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { getArticleBySlug } from "@/data/articles";
 
@@ -22,7 +22,7 @@ export const RelatedArticlesInline = ({ articleSlugs }: RelatedArticlesInlinePro
         {articles.map((article) => (
           <Link
             key={article.slug}
-            to={`/blog/${article.slug}`}
+            href={`/blog/${article.slug}`}
             className="group flex gap-4 p-4 rounded-xl transition-all duration-300 hover:shadow-sm"
             style={{ border: '1px solid rgba(27, 58, 75, 0.08)' }}
           >

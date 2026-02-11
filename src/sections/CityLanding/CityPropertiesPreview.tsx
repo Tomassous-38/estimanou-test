@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+'use client';
+
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import type { CityLanding } from "@/types/city";
 import { getPropertiesByCity } from "@/data/properties";
@@ -24,7 +26,7 @@ export const CityPropertiesPreview = ({ city }: CityPropertiesPreviewProps) => {
             </h2>
           </div>
           <Link
-            to={`/biens-a-vendre/${city.slug}`}
+            href={`/biens-a-vendre/${city.slug}`}
             className="hidden md:inline-flex items-center gap-2 text-navy/60 text-[12px] tracking-wide border border-navy/12 rounded-full px-5 py-2 hover:bg-navy hover:text-white transition-all duration-300 flex-shrink-0 mt-4 md:mt-0"
           >
             Voir tout à {city.name}
@@ -37,7 +39,7 @@ export const CityPropertiesPreview = ({ city }: CityPropertiesPreviewProps) => {
           {properties.map((property) => (
             <Link
               key={property.slug}
-              to={`/biens-a-vendre/${property.citySlug}/${property.slug}`}
+              href={`/biens-a-vendre/${property.citySlug}/${property.slug}`}
               className="animate-fade-in-up group bg-white rounded-2xl overflow-hidden card-hover"
             >
               <div className="relative overflow-hidden aspect-[4/3]">
@@ -79,7 +81,7 @@ export const CityPropertiesPreview = ({ city }: CityPropertiesPreviewProps) => {
           {properties.map((property) => (
             <Link
               key={property.slug}
-              to={`/biens-a-vendre/${property.citySlug}/${property.slug}`}
+              href={`/biens-a-vendre/${property.citySlug}/${property.slug}`}
               className="group bg-white rounded-2xl overflow-hidden card-hover flex-shrink-0 snap-start"
               style={{ width: "80vw", maxWidth: "320px" }}
             >
@@ -120,14 +122,14 @@ export const CityPropertiesPreview = ({ city }: CityPropertiesPreviewProps) => {
         {/* Double CTA en bas */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mt-10">
           <Link
-            to={`/biens-a-vendre/${city.slug}`}
+            href={`/biens-a-vendre/${city.slug}`}
             className="inline-flex items-center justify-center gap-2 text-navy/60 text-[12px] tracking-wide border border-navy/12 rounded-full px-6 py-2.5 hover:bg-navy hover:text-white transition-all duration-300"
           >
             Voir tous les biens à {city.name}
             <ArrowRight className="w-3 h-3" strokeWidth={1.5} />
           </Link>
           <Link
-            to="/estimer"
+            href="/estimer"
             className="inline-flex items-center justify-center gap-2 bg-navy text-white text-[12px] tracking-wide rounded-full px-6 py-2.5 hover:bg-navy/90 transition-all duration-300"
           >
             Faire estimer mon bien
