@@ -4,7 +4,7 @@ export const FooterCopyright = () => {
       <div className="box-border caret-transparent max-w-full text-neutral-500 text-[15px] font-light">
         © 2025 Estimanou — Valentin Bourassin Immobilier
       </div>
-      <div className="flex items-center gap-3 text-neutral-500 text-[13px] font-light">
+      <div className="flex items-center gap-3 text-neutral-600 text-[13px] font-light">
         <a href="#" className="hover:text-navy transition-colors duration-300">Mentions légales</a>
         <span className="w-1 h-1 rounded-full bg-neutral-300"></span>
         <a href="#" className="hover:text-navy transition-colors duration-300">Confidentialité</a>

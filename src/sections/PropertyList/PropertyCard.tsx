@@ -56,22 +56,22 @@ export const PropertyCard = ({ property }: PropertyCardProps) => {
             {property.title}
           </h3>
         </div>
-        <p className="text-neutral-400 text-[11px] font-light mb-3">
+        <p className="text-neutral-500 text-[11px] font-light mb-3">
           {property.cityName} · {property.neighborhood}
         </p>
 
         {/* Key details */}
         <div className="flex items-center gap-3 mb-3">
-          <span className="flex items-center gap-1 text-neutral-400 text-[11px]">
+          <span className="flex items-center gap-1 text-neutral-500 text-[11px]">
             <Maximize className="w-3 h-3" strokeWidth={1.5} />
             {property.surface} m²
           </span>
-          <span className="flex items-center gap-1 text-neutral-400 text-[11px]">
+          <span className="flex items-center gap-1 text-neutral-500 text-[11px]">
             <Home className="w-3 h-3" strokeWidth={1.5} />
             {property.rooms} p.
           </span>
           {property.bedrooms > 0 && (
-            <span className="flex items-center gap-1 text-neutral-400 text-[11px]">
+            <span className="flex items-center gap-1 text-neutral-500 text-[11px]">
               <Bed className="w-3 h-3" strokeWidth={1.5} />
               {property.bedrooms} ch.
             </span>

@@ -184,7 +184,7 @@ export const Secteurs = () => {
                   <p className="text-neutral-500 text-[12px] font-light leading-relaxed line-clamp-2">
                     {city.accroche}
                   </p>
-                  <div className="flex items-center gap-1 mt-2.5 text-navy/60 text-[11px] font-normal tracking-wide group-hover:text-navy/80 transition-colors duration-300">
+                  <div className="flex items-center gap-1 mt-2.5 text-navy/80 text-[11px] font-normal tracking-wide group-hover:text-navy transition-colors duration-300">
                     Voir l'estimation
                     <ArrowRight className="w-3 h-3" strokeWidth={1.5} />
                   </div>

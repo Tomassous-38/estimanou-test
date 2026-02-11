@@ -28,7 +28,7 @@ export const CityPropertiesPreview = ({ city }: CityPropertiesPreviewProps) => {
           </div>
           <Link
             href={`/biens-a-vendre/${city.slug}`}
-            className="hidden md:inline-flex items-center gap-2 text-navy/60 text-[12px] tracking-wide border border-navy/12 rounded-full px-5 py-2 hover:bg-navy hover:text-white transition-all duration-300 flex-shrink-0 mt-4 md:mt-0"
+            className="hidden md:inline-flex items-center gap-2 text-navy text-[12px] tracking-wide border border-navy/20 rounded-full px-5 py-2 hover:bg-navy hover:text-white transition-all duration-300 flex-shrink-0 mt-4 md:mt-0"
           >
             Voir tout à {city.name}
             <ArrowRight className="w-3 h-3" strokeWidth={1.5} />
@@ -67,9 +67,9 @@ export const CityPropertiesPreview = ({ city }: CityPropertiesPreviewProps) => {
                   <h3 className="text-navy text-base font-cormorant font-semibold tracking-tight">
                     {property.title}
                   </h3>
-                  <span className="text-neutral-400 text-xs font-light">{property.neighborhood}</span>
+                  <span className="text-neutral-500 text-xs font-light">{property.neighborhood}</span>
                 </div>
-                <p className="text-neutral-400 text-[11px] font-light mb-3">
+                <p className="text-neutral-500 text-[11px] font-light mb-3">
                   {property.rooms} pièces · {property.bedrooms} ch. · {property.surface} m²
                 </p>
                 <div className="text-gold text-lg font-cormorant font-semibold tracking-tight">
@@ -113,9 +113,9 @@ export const CityPropertiesPreview = ({ city }: CityPropertiesPreviewProps) => {
                   <h3 className="text-navy text-base font-cormorant font-semibold tracking-tight">
                     {property.title}
                   </h3>
-                  <span className="text-neutral-400 text-xs font-light">{property.neighborhood}</span>
+                  <span className="text-neutral-500 text-xs font-light">{property.neighborhood}</span>
                 </div>
-                <p className="text-neutral-400 text-[11px] font-light mb-3">
+                <p className="text-neutral-500 text-[11px] font-light mb-3">
                   {property.rooms} pièces · {property.bedrooms} ch. · {property.surface} m²
                 </p>
                 <div className="text-gold text-lg font-cormorant font-semibold tracking-tight">
@@ -130,7 +130,7 @@ export const CityPropertiesPreview = ({ city }: CityPropertiesPreviewProps) => {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mt-10">
           <Link
             href={`/biens-a-vendre/${city.slug}`}
-            className="inline-flex items-center justify-center gap-2 text-navy/60 text-[12px] tracking-wide border border-navy/12 rounded-full px-6 py-2.5 hover:bg-navy hover:text-white transition-all duration-300"
+            className="inline-flex items-center justify-center gap-2 text-navy text-[12px] tracking-wide border border-navy/20 rounded-full px-6 py-2.5 hover:bg-navy hover:text-white transition-all duration-300"
           >
             Voir tous les biens à {city.name}
             <ArrowRight className="w-3 h-3" strokeWidth={1.5} />

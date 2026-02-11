@@ -27,7 +27,7 @@ export const PropertiesCarousel = () => {
               Tous nos biens sont accompagnés d'une fourchette d'estimation transparente, pour acheter en toute confiance.
             </p>
           </div>
-          <Link href="/biens-a-vendre" className="hidden md:inline-flex items-center gap-2 text-navy/60 text-[12px] tracking-wide border border-navy/12 rounded-full px-5 py-2 hover:bg-navy hover:text-white transition-all duration-300 flex-shrink-0 mt-4 md:mt-0">
+          <Link href="/biens-a-vendre" className="hidden md:inline-flex items-center gap-2 text-navy text-[12px] tracking-wide border border-navy/20 rounded-full px-5 py-2 hover:bg-navy hover:text-white transition-all duration-300 flex-shrink-0 mt-4 md:mt-0">
             Voir tous les biens
             <ArrowRight className="w-3 h-3" strokeWidth={1.5} />
           </Link>
@@ -55,7 +55,7 @@ export const PropertiesCarousel = () => {
               <div className="p-5 text-left">
                 <div className="flex items-baseline justify-between mb-1">
                   <h3 className="text-navy text-base font-cormorant font-semibold tracking-tight">{property.title}</h3>
-                  <span className="text-neutral-400 text-xs font-light">{property.neighborhood}</span>
+                  <span className="text-neutral-500 text-xs font-light">{property.neighborhood}</span>
                 </div>
                 <p className="text-neutral-500 text-[11px] font-light mb-2">
                   {property.rooms} pièces · {property.bedrooms} ch. · {property.surface} m²
@@ -64,7 +64,7 @@ export const PropertiesCarousel = () => {
                   {property.priceDisplay}
                 </div>
                 {property.estimationRange && (
-                  <p className="text-gold/80 text-[12px] font-light">
+                  <p className="text-gold text-[12px] font-light">
                     Estimation : {property.estimationRange}
                   </p>
                 )}
@@ -92,7 +92,7 @@ export const PropertiesCarousel = () => {
                 <div className="p-5 text-left">
                   <div className="flex items-baseline justify-between mb-1">
                     <h3 className="text-navy text-base font-cormorant font-semibold tracking-tight">{property.title}</h3>
-                    <span className="text-neutral-400 text-xs font-light">{property.neighborhood}</span>
+                    <span className="text-neutral-500 text-xs font-light">{property.neighborhood}</span>
                   </div>
                   <p className="text-neutral-500 text-[11px] font-light mb-2">
                     {property.rooms} pièces · {property.bedrooms} ch. · {property.surface} m²
@@ -110,7 +110,7 @@ export const PropertiesCarousel = () => {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mt-10">
           <Link
             href="/biens-a-vendre"
-            className="inline-flex items-center justify-center gap-2 text-navy/60 text-[12px] tracking-wide border border-navy/12 rounded-full px-6 py-2.5 hover:bg-navy hover:text-white transition-all duration-300"
+            className="inline-flex items-center justify-center gap-2 text-navy text-[12px] tracking-wide border border-navy/20 rounded-full px-6 py-2.5 hover:bg-navy hover:text-white transition-all duration-300"
           >
             Voir tous les biens à vendre
             <ArrowRight className="w-3 h-3" strokeWidth={1.5} />

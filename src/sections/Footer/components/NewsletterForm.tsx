@@ -26,7 +26,7 @@ export const NewsletterForm = () => {
           <ArrowRight className="ml-2 w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5" strokeWidth={1.5} />
         </button>
       </form>
-      <p className="text-neutral-400 text-[11px] font-light">
+      <p className="text-neutral-500 text-[11px] font-light">
         Pas de spam, uniquement du contenu pertinent. Désinscription en un clic.
       </p>
     </div>
