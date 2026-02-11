@@ -11,6 +11,13 @@ import { RelatedArticlesInline } from "./blocks/RelatedArticlesInline";
 import { CTABlock } from "./blocks/CTABlock";
 import { ComparisonTableBlock } from "./blocks/ComparisonTableBlock";
 import { TimelineBlock } from "./blocks/TimelineBlock";
+import { VideoEmbedBlock } from "./blocks/VideoEmbedBlock";
+import { InteractiveChartBlock } from "./blocks/InteractiveChartBlock";
+import { NumberedListBlock } from "./blocks/NumberedListBlock";
+import { ProsConsBlock } from "./blocks/ProsConsBlock";
+import { EmbedBlock } from "./blocks/EmbedBlock";
+import { SummaryBlock } from "./blocks/SummaryBlock";
+import { GalleryBlock } from "./blocks/GalleryBlock";
 
 export const ContentBlockRenderer = ({ block }: { block: ContentBlock }) => {
   switch (block.type) {
@@ -38,6 +45,20 @@ export const ContentBlockRenderer = ({ block }: { block: ContentBlock }) => {
       return <ComparisonTableBlock headers={block.headers} rows={block.rows} />;
     case "timeline":
       return <TimelineBlock steps={block.steps} />;
+    case "video-embed":
+      return <VideoEmbedBlock url={block.url} caption={block.caption} aspectRatio={block.aspectRatio} />;
+    case "interactive-chart":
+      return <InteractiveChartBlock title={block.title} data={block.data} unit={block.unit} source={block.source} variant={block.variant} />;
+    case "numbered-list":
+      return <NumberedListBlock title={block.title} items={block.items} />;
+    case "pros-cons":
+      return <ProsConsBlock title={block.title} pros={block.pros} cons={block.cons} />;
+    case "embed":
+      return <EmbedBlock url={block.url} height={block.height} caption={block.caption} aspectRatio={block.aspectRatio} />;
+    case "summary":
+      return <SummaryBlock title={block.title} points={block.points} />;
+    case "gallery":
+      return <GalleryBlock images={block.images} columns={block.columns} caption={block.caption} />;
     default:
       return null;
   }

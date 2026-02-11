@@ -25,7 +25,14 @@ export type ContentBlock =
   | { type: "related-articles"; articleSlugs: string[] }
   | { type: "cta-block"; title: string; description: string; buttonText: string; buttonHref: string }
   | { type: "comparison-table"; headers: string[]; rows: string[][] }
-  | { type: "timeline"; steps: { number: string; title: string; description: string }[] };
+  | { type: "timeline"; steps: { number: string; title: string; description: string }[] }
+  | { type: "video-embed"; url: string; caption?: string; aspectRatio?: "16:9" | "4:3" | "1:1" }
+  | { type: "interactive-chart"; title?: string; data: { label: string; value: number; color?: string }[]; unit?: string; source?: string; variant?: "bar" | "horizontal-bar" }
+  | { type: "numbered-list"; title?: string; items: { title: string; description?: string }[] }
+  | { type: "pros-cons"; title?: string; pros: string[]; cons: string[] }
+  | { type: "embed"; url: string; height?: number; caption?: string; aspectRatio?: "16:9" | "4:3" | "auto" }
+  | { type: "summary"; title?: string; points: string[] }
+  | { type: "gallery"; images: { src: string; alt: string; caption?: string }[]; columns?: 2 | 3; caption?: string };
 
 export interface BlogArticle {
   slug: string;

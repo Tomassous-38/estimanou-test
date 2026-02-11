@@ -78,6 +78,13 @@ import { FAQBlock } from "@/sections/BlogArticle/blocks/FAQBlock";
 import { ComparisonTableBlock } from "@/sections/BlogArticle/blocks/ComparisonTableBlock";
 import { TimelineBlock } from "@/sections/BlogArticle/blocks/TimelineBlock";
 import { CTABlock } from "@/sections/BlogArticle/blocks/CTABlock";
+import { VideoEmbedBlock } from "@/sections/BlogArticle/blocks/VideoEmbedBlock";
+import { InteractiveChartBlock } from "@/sections/BlogArticle/blocks/InteractiveChartBlock";
+import { NumberedListBlock } from "@/sections/BlogArticle/blocks/NumberedListBlock";
+import { ProsConsBlock } from "@/sections/BlogArticle/blocks/ProsConsBlock";
+import { EmbedBlock } from "@/sections/BlogArticle/blocks/EmbedBlock";
+import { SummaryBlock } from "@/sections/BlogArticle/blocks/SummaryBlock";
+import { GalleryBlock } from "@/sections/BlogArticle/blocks/GalleryBlock";
 
 // ── Sidebar blocks ──
 import { SidebarCTA } from "@/sections/BlogArticle/sidebar/SidebarCTA";
@@ -219,6 +226,13 @@ export default function BlocksPage() {
                 <a href="#comparison-table" className="text-navy/60 hover:text-navy transition-colors">Comparison Table</a>
                 <a href="#timeline" className="text-navy/60 hover:text-navy transition-colors">Timeline</a>
                 <a href="#cta-block" className="text-navy/60 hover:text-navy transition-colors">CTA Block</a>
+                <a href="#video-embed" className="text-navy/60 hover:text-navy transition-colors">Video Embed</a>
+                <a href="#interactive-chart" className="text-navy/60 hover:text-navy transition-colors">Interactive Chart</a>
+                <a href="#numbered-list" className="text-navy/60 hover:text-navy transition-colors">Numbered List</a>
+                <a href="#pros-cons" className="text-navy/60 hover:text-navy transition-colors">Pros & Cons</a>
+                <a href="#embed-block" className="text-navy/60 hover:text-navy transition-colors">Embed Block</a>
+                <a href="#summary-block" className="text-navy/60 hover:text-navy transition-colors">Summary Block</a>
+                <a href="#gallery-block" className="text-navy/60 hover:text-navy transition-colors">Gallery Block</a>
                 <a href="#sidebar-cta" className="text-navy/60 hover:text-navy transition-colors">Sidebar CTA</a>
                 <a href="#sidebar-author" className="text-navy/60 hover:text-navy transition-colors">Sidebar Author</a>
               </nav>
@@ -501,6 +515,124 @@ export default function BlocksPage() {
           description="Recevez une estimation gratuite et d\u00e9taill\u00e9e sous 48h par un expert local."
           buttonText="Demander mon estimation"
           buttonHref="/estimer"
+        />
+      </div>
+
+      <BlockSeparator id="video-embed" title="Video Embed Block" description="Vidéo YouTube / Vimeo intégrée avec lazy loading" />
+      <div className="max-w-[700px] mx-auto px-5 py-10 md:px-8">
+        <VideoEmbedBlock
+          url="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+          caption="Présentation du marché immobilier à La Réunion (démo)"
+        />
+      </div>
+
+      <BlockSeparator id="interactive-chart" title="Interactive Chart Block" description="Graphiques interactifs (barres verticales & horizontales)" />
+      <div className="max-w-[700px] mx-auto px-5 py-10 md:px-8 flex flex-col gap-8">
+        <InteractiveChartBlock
+          title="Prix moyen au m² par secteur (2024)"
+          data={[
+            { label: "Ouest", value: 4200 },
+            { label: "Nord", value: 2800 },
+            { label: "Sud", value: 2500 },
+            { label: "Est", value: 1900 },
+            { label: "Hauts", value: 2100 },
+          ]}
+          unit=" €/m²"
+          source="Observatoire de l'immobilier — La Réunion, 2024"
+        />
+        <InteractiveChartBlock
+          title="Nombre d'estimations par ville"
+          variant="horizontal-bar"
+          data={[
+            { label: "Saint-Denis", value: 842 },
+            { label: "Saint-Pierre", value: 615 },
+            { label: "Saint-Paul", value: 573 },
+            { label: "Le Tampon", value: 298 },
+            { label: "Saint-André", value: 187 },
+            { label: "Saint-Louis", value: 124 },
+          ]}
+          source="Estimanou — Données internes 2024"
+        />
+      </div>
+
+      <BlockSeparator id="numbered-list" title="Numbered List Block" description="Liste ordonnée avec titres et descriptions" />
+      <div className="max-w-[700px] mx-auto px-5 py-10 md:px-8">
+        <NumberedListBlock
+          title="Les 5 étapes pour vendre votre bien"
+          items={[
+            { title: "Faites estimer votre bien", description: "Une estimation précise est la base d'une vente réussie." },
+            { title: "Préparez votre dossier", description: "Diagnostics, titre de propriété, derniers PV d'AG..." },
+            { title: "Mettez en valeur votre bien", description: "Photos professionnelles, home staging, vidéo drone." },
+            { title: "Diffusez l'annonce", description: "Publication sur les portails immobiliers et réseaux sociaux." },
+            { title: "Concluez la vente", description: "Accompagnement jusqu'à la signature chez le notaire." },
+          ]}
+        />
+      </div>
+
+      <BlockSeparator id="pros-cons" title="Pros & Cons Block" description="Comparatif avantages / inconvénients" />
+      <div className="max-w-[700px] mx-auto px-5 py-10 md:px-8">
+        <ProsConsBlock
+          title="Acheter dans l'Ouest de La Réunion"
+          pros={[
+            "Cadre de vie exceptionnel (plages, couchers de soleil)",
+            "Forte demande locative = bon rendement",
+            "Valorisation constante du patrimoine",
+            "Proximité des commerces et infrastructures",
+          ]}
+          cons={[
+            "Prix au m² les plus élevés de l'île",
+            "Marché très concurrentiel",
+            "Risque de surévaluation des biens",
+            "Embouteillages fréquents aux heures de pointe",
+          ]}
+        />
+      </div>
+
+      <BlockSeparator id="embed-block" title="Embed Block" description="Intégration iframe sécurisée (Google Maps, Typeform, etc.)" />
+      <div className="max-w-[700px] mx-auto px-5 py-10 md:px-8">
+        <EmbedBlock
+          url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d225052.0!2d55.3!3d-21.1!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2178d6e0!2sLa+Reunion!5e0!3m2!1sfr!2sfr"
+          height={350}
+          caption="Carte de La Réunion — Google Maps"
+        />
+      </div>
+
+      <BlockSeparator id="summary-block" title="Summary Block" description="Résumé avec points numérotés (début d'article)" />
+      <div className="max-w-[700px] mx-auto px-5 py-10 md:px-8">
+        <SummaryBlock
+          title="Ce que vous allez apprendre"
+          points={[
+            "L'état du marché immobilier à La Réunion en 2024",
+            "Les secteurs les plus porteurs pour investir",
+            "Comment obtenir une estimation fiable de votre bien",
+            "Les erreurs à éviter lors d'une mise en vente",
+          ]}
+        />
+      </div>
+
+      <BlockSeparator id="gallery-block" title="Gallery Block" description="Grille d'images avec captions au hover" />
+      <div className="max-w-[700px] mx-auto px-5 py-10 md:px-8 flex flex-col gap-8">
+        <GalleryBlock
+          images={[
+            { src: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&h=450&fit=crop", alt: "Villa front de mer", caption: "Villa avec vue mer à Saint-Gilles" },
+            { src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=450&fit=crop", alt: "Maison contemporaine", caption: "Maison contemporaine à Saint-Denis" },
+            { src: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&h=450&fit=crop", alt: "Appartement moderne", caption: "Appartement T3 à Saint-Pierre" },
+            { src: "https://images.unsplash.com/photo-1599427303058-f04cbcf4756f?w=600&h=450&fit=crop", alt: "Jardin tropical", caption: "Jardin tropical à Sainte-Marie" },
+          ]}
+          columns={2}
+          caption="Exemples de biens estimés par Estimanou en 2024"
+        />
+        <GalleryBlock
+          images={[
+            { src: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=400&h=300&fit=crop", alt: "Vue 1" },
+            { src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&h=300&fit=crop", alt: "Vue 2" },
+            { src: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=400&h=300&fit=crop", alt: "Vue 3" },
+            { src: "https://images.unsplash.com/photo-1599427303058-f04cbcf4756f?w=400&h=300&fit=crop", alt: "Vue 4" },
+            { src: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&h=300&fit=crop", alt: "Vue 5" },
+            { src: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=400&h=300&fit=crop", alt: "Vue 6" },
+          ]}
+          columns={3}
+          caption="Galerie en 3 colonnes"
         />
       </div>
 
