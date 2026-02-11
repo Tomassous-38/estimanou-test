@@ -45,8 +45,9 @@ module.exports = {
           100: '#F8F6F2',
         },
         gold: {
-          DEFAULT: '#B8975A',
+          DEFAULT: '#96793D',
           light: '#D4C4A0',
+          decorative: '#B8975A',
         },
         sage: '#E8EDE6',
       },

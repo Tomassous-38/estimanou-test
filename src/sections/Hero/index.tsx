@@ -1,23 +1,30 @@
+import Image from "next/image";
 import { HeroContent } from "@/sections/Hero/components/HeroContent";
 
 export const Hero = () => {
   return (
     <section className="relative w-full min-h-screen flex items-center overflow-hidden">
-      {/* Video background */}
+      {/* Background: poster image (LCP) + lazy video overlay */}
       <div className="absolute inset-0 z-0">
+        {/* Static poster — loaded immediately as LCP element */}
+        <Image
+          src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1280&h=720&fit=crop&q=50&fm=webp"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+        {/* Video overlay — loads lazily on top of poster */}
         <video
           autoPlay
           muted
           loop
           playsInline
           preload="none"
-          poster="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1280&h=720&fit=crop&q=60&fm=webp"
-          className="w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover"
         >
-          <source
-            src="/hero-reunion.mp4"
-            type="video/mp4"
-          />
+          <source src="/hero-reunion.mp4" type="video/mp4" />
         </video>
         {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-navy/70 via-navy/55 to-navy/80" />

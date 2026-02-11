@@ -81,7 +81,7 @@ export const Blog = () => {
                 <p className="text-neutral-500 text-[13px] font-light leading-relaxed line-clamp-2">
                   {article.excerpt}
                 </p>
-                <div className="flex items-center gap-1.5 text-navy/40 text-[11px] font-normal tracking-wide pt-1 underline underline-offset-2 decoration-navy/15 group-hover:text-navy/60 transition-colors duration-300">
+                <div className="flex items-center gap-1.5 text-navy/60 text-[11px] font-normal tracking-wide pt-1 underline underline-offset-2 decoration-navy/20 group-hover:text-navy/80 transition-colors duration-300">
                   lire l'article
                 </div>
               </div>

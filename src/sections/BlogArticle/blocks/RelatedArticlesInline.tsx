@@ -42,7 +42,7 @@ export const RelatedArticlesInline = ({ articleSlugs }: RelatedArticlesInlinePro
               <span className="text-navy text-sm font-cormorant font-semibold leading-snug line-clamp-2 group-hover:text-navy/70 transition-colors">
                 {article.title}
               </span>
-              <span className="flex items-center gap-1 text-navy/40 text-[11px] mt-1.5 group-hover:text-navy/60 transition-colors">
+              <span className="flex items-center gap-1 text-navy/60 text-[11px] mt-1.5 group-hover:text-navy/80 transition-colors">
                 Lire <ArrowRight className="w-3 h-3" strokeWidth={1.5} />
               </span>
             </div>
